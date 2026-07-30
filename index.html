@@ -1,99 +1,1916 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shivam Opticals | Eyewear & Eye Care in Sultanpur</title>
-  <meta name="description" content="Shivam Opticals in Sultanpur — spectacles, sunglasses, lenses, frames and eye testing. Visit our stores or contact us on WhatsApp.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A2540" />
+
+<!-- SEO -->
+<title>Shivam Opticals — Best Optical Store in Sultanpur | Bluecut, Photochromic & Computer Glasses</title>
+<meta name="description" content="Shivam Opticals is Sultanpur's most trusted optical store offering affordable Bluecut Glasses, Computer Glasses, Anti Glare & Photochromic Lenses, designer Sunglasses and free eye testing. Two branches at Dariyapur & Kasba." />
+<meta name="keywords" content="Best Optical Store in Sultanpur, Bluecut Glasses in Sultanpur, Computer Glasses Shop Near Me, Photochromic Lenses Sultanpur, Anti Glare Lenses, Free Eye Testing Sultanpur, Sunglasses Shop Sultanpur, Shivam Opticals" />
+<meta name="author" content="Shivam Opticals" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://shivamopticals.co/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Shivam Opticals — Best Optical Store in Sultanpur" />
+<meta property="og:description" content="Affordable Eyewear, Bluecut, Photochromic & Computer Glasses. Trusted local optical store with two branches in Sultanpur." />
+<meta property="og:locale" content="en_IN" />
+
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Optician",
+  "name": "Shivam Opticals",
+  "image": "",
+  "description": "Affordable Eyewear, Bluecut, Photochromic & Computer Glasses in Sultanpur",
+  "telephone": ["+919415382565", "+917007290065", "+919569916408"],
+  "priceRange": "₹₹",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Dariyapur Tiraha, Prayagraj Road",
+      "addressLocality": "Sultanpur",
+      "postalCode": "228001",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Near Astha Hospital, KNI Road, Kasba",
+      "addressLocality": "Sultanpur",
+      "postalCode": "228001",
+      "addressCountry": "IN"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/share/14bh6ByCsjP/",
+    "https://www.instagram.com/shivamopticals.co"
+  ]
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================
+     RESET & BASE
+     ============================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  :root {
+    --bg: #fbfcfe;
+    --surface: #ffffff;
+    --ink: #0a0a0a;
+    --ink-soft: #475569;
+    --ink-muted: #94a3b8;
+    --line: #e6ebf2;
+
+    --navy: #0A2540;
+    --navy-deep: #061a30;
+    --blue: #1e6bff;
+    --blue-soft: #eaf1ff;
+    --blue-glow: rgba(30, 107, 255, 0.12);
+
+    --radius-sm: 12px;
+    --radius: 20px;
+    --radius-lg: 28px;
+    --radius-xl: 36px;
+
+    --shadow-sm: 0 1px 2px rgba(10, 37, 64, 0.04), 0 1px 3px rgba(10, 37, 64, 0.06);
+    --shadow: 0 4px 12px rgba(10, 37, 64, 0.06), 0 2px 6px rgba(10, 37, 64, 0.04);
+    --shadow-lg: 0 24px 48px rgba(10, 37, 64, 0.10), 0 8px 16px rgba(10, 37, 64, 0.06);
+    --shadow-glow: 0 20px 60px rgba(30, 107, 255, 0.25);
+
+    --container: 1240px;
+  }
+
+  /* ============================
+     UTILITIES
+     ============================ */
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .section { padding: 96px 0; position: relative; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding: 8px 14px;
+    border-radius: 100px;
+    background: var(--blue-soft);
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(30, 107, 255, 0.15);
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+  h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
+  h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+  .section-head { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+  .section-head h2 { margin-bottom: 16px; }
+  .section-head p { color: var(--ink-soft); font-size: 1.05rem; }
+
+  .italic-accent {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--blue);
+  }
+
+  /* ============================
+     BUTTONS
+     ============================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, background 0.25s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn svg { width: 18px; height: 18px; }
+  .btn-primary {
+    background: var(--navy);
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+  .btn-primary:hover { background: var(--navy-deep); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
+  }
+  .btn-whatsapp:hover { background: #20bd5a; transform: translateY(-2px); }
+  .btn-ghost {
+    background: rgba(255,255,255,0.7);
+    color: var(--navy);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(10, 37, 64, 0.12);
+  }
+  .btn-ghost:hover { background: #fff; transform: translateY(-2px); box-shadow: var(--shadow); }
+
+  /* ============================
+     NAVIGATION
+     ============================ */
+  .nav-wrap {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 24px;
+    transition: padding 0.3s ease;
+  }
+  .nav {
+    max-width: var(--container);
+    margin: 0 auto;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(10, 37, 64, 0.06);
+    border-radius: 100px;
+    padding: 10px 14px 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 32px rgba(10, 37, 64, 0.06);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .logo-mark {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    display: grid;
+    place-items: center;
+    position: relative;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.15);
+  }
+  .logo-mark::before, .logo-mark::after {
+    content: '';
+    position: absolute;
+    width: 10px; height: 10px;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    top: 14px;
+  }
+  .logo-mark::before { left: 8px; }
+  .logo-mark::after { right: 8px; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta {
+    background: var(--navy);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    transition: background 0.2s ease;
+  }
+  .nav-cta:hover { background: var(--navy-deep); }
+  .nav-toggle {
+    display: none;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============================
+     HERO
+     ============================ */
+  .hero {
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(30, 107, 255, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 85% 80%, rgba(10, 37, 64, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero h1 {
+    margin-bottom: 24px;
+    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  }
+  .hero-tagline {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    max-width: 540px;
+    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 48px;
+    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+  }
+  .hero-trust {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+  }
+  .trust-item .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .trust-item .label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  /* Hero Visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1.05;
+    animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  }
+  .hero-img-main {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a3a6b 0%, #0A2540 100%);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-img-main img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    mix-blend-mode: luminosity;
+    opacity: 0.85;
+  }
+  .hero-img-main::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(10, 37, 64, 0.4) 100%);
+  }
+  .hero-badge {
+    position: absolute;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-badge-1 {
+    top: 8%;
+    right: -8%;
+    animation: float 4s ease-in-out infinite;
+  }
+  .hero-badge-2 {
+    bottom: 10%;
+    left: -10%;
+    animation: float 4s ease-in-out infinite 2s;
+  }
+  .hero-badge-icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+  }
+  .hero-badge-text { line-height: 1.2; }
+  .hero-badge-text strong {
+    display: block;
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .hero-badge-text span {
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  /* ============================
+     MARQUEE / KEYWORDS
+     ============================ */
+  .marquee {
+    background: var(--navy);
+    color: #fff;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+  }
+  .marquee-item {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    white-space: nowrap;
+  }
+  .marquee-item::after {
+    content: '✦';
+    color: var(--blue);
+    font-style: normal;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============================
+     SERVICES
+     ============================ */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    transition: height 0.4s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+  }
+  .service-card:hover::before { height: 4px; }
+  .service-icon {
+    width: 64px; height: 64px;
+    border-radius: 18px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover .service-icon {
+    transform: scale(1.08) rotate(-4deg);
+  }
+  .service-icon svg { width: 30px; height: 30px; stroke-width: 1.5; }
+  .service-card h3 {
+    margin-bottom: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  .service-card p {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .service-card .price {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    padding: 4px 10px;
+    background: var(--blue-soft);
+    border-radius: 100px;
+  }
+
+  /* ============================
+     ABOUT
+     ============================ */
+  .about {
+    background: linear-gradient(180deg, var(--bg) 0%, #f3f6fc 100%);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    box-shadow: var(--shadow-lg);
+  }
+  .about-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .about-img-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    background: rgba(10, 37, 64, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    color: #fff;
+  }
+  .about-img-tag strong {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .about-img-tag span {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+  .about-content h2 { margin-bottom: 28px; }
+  .about-content p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+  }
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .about-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+  }
+  .about-feature-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .about-feature h4 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .about-feature p {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ============================
+     GALLERY
+     ============================ */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    grid-auto-rows: 220px;
+  }
+  .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    background: var(--navy);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+  }
+  .gallery-item:hover { transform: scale(1.02); }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .gallery-item:hover img { transform: scale(1.08); }
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(10, 37, 64, 0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .gallery-item:hover::after { opacity: 1; }
+  .gallery-item .gal-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+    transform: translateY(10px);
+    z-index: 2;
+  }
+  .gallery-item:hover .gal-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .gallery-item.tall { grid-row: span 2; }
+  .gallery-item.wide { grid-column: span 2; }
+
+  /* ============================
+     BRANCHES
+     ============================ */
+  .branches-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .branch-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .branch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .branch-map {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border: 0;
+    background: var(--blue-soft);
+    display: block;
+  }
+  .branch-body { padding: 28px; }
+  .branch-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: var(--blue-soft);
+    padding: 5px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+  .branch-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .branch-card .branch-addr {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .branch-addr svg {
+    width: 18px; height: 18px;
+    color: var(--blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .branch-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .branch-actions .btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  /* ============================
+     TESTIMONIALS
+     ============================ */
+  .testimonials {
+    background: var(--navy);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonials::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(30, 107, 255, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(30, 107, 255, 0.1) 0%, transparent 50%);
+  }
+  .testimonials .section-head h2 { color: #fff; }
+  .testimonials .section-head p { color: rgba(255,255,255,0.7); }
+  .testimonials .eyebrow {
+    background: rgba(30, 107, 255, 0.2);
+    color: #7eb0ff;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    position: relative;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.08);
+  }
+  .stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 20px;
+    color: #fbbf24;
+  }
+  .stars svg { width: 16px; height: 16px; }
+  .testimonial-card blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .testi-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue) 0%, #7eb0ff 100%);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 15px;
+  }
+  .testi-meta strong {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .testi-meta span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ============================
+     FAQ
+     ============================ */
+  .faq-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+    cursor: pointer;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--line); }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .faq-toggle {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .faq-toggle svg {
+    width: 14px; height: 14px;
+    transition: transform 0.3s ease;
+  }
+  .faq-item.open .faq-toggle {
+    background: var(--navy);
+    color: #fff;
+  }
+  .faq-item.open .faq-toggle svg { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s ease;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-a {
+    max-height: 500px;
+    margin-top: 16px;
+  }
+
+  /* ============================
+     CONTACT
+     ============================ */
+  .contact {
+    background: linear-gradient(135deg, #061a30 0%, #0A2540 50%, #1a3a6b 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(30, 107, 255, 0.2) 0%, transparent 70%);
+    top: -200px; right: -200px;
+  }
+  .contact .container { position: relative; z-index: 1; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .contact h2 { color: #fff; margin-bottom: 20px; }
+  .contact .eyebrow {
+    background: rgba(30, 107, 255, 0.2);
+    color: #7eb0ff;
+  }
+  .contact-intro {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.05rem;
+    margin-bottom: 36px;
+  }
+  .phone-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .phone-list a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .phone-list a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(4px);
+  }
+  .phone-icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .phone-icon svg { width: 20px; height: 20px; color: #fff; }
+  .phone-text strong {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .phone-text span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+  .contact-whatsapp {
+    width: 100%;
+    padding: 18px 28px;
+    font-size: 16px;
+  }
+  .contact-visual {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .contact-visual img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .contact-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(10, 37, 64, 0.6) 100%);
+  }
+  .contact-visual-text {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    right: 32px;
+    color: #fff;
+    z-index: 2;
+  }
+  .contact-visual-text h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .contact-visual-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ============================
+     FOOTER
+     ============================ */
+  footer {
+    background: #050d18;
+    color: rgba(255,255,255,0.7);
+    padding: 80px 0 32px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo { color: #fff; margin-bottom: 16px; }
+  .footer-brand p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+  }
+  .footer-socials a {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: grid;
+    place-items: center;
+    color: rgba(255,255,255,0.8);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .footer-socials a:hover {
+    background: var(--blue);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  .footer-socials svg { width: 16px; height: 16px; }
+  .footer-col h5 {
+    font-family: 'Manrope', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; display: grid; gap: 12px; }
+  .footer-col a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    transition: color 0.2s ease;
+  }
+  .footer-col a:hover { color: var(--blue); }
+  .footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+  .footer-contact-item svg {
+    width: 16px; height: 16px;
+    color: var(--blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+  .seo-keywords {
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+  }
+
+  /* ============================
+     FLOATING WHATSAPP
+     ============================ */
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    animation: pulse 2.5s ease-in-out infinite;
+    transition: transform 0.25s ease;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float svg { width: 30px; height: 30px; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 0 0 14px rgba(37, 211, 102, 0); }
+  }
+
+  /* ============================
+     RESPONSIVE
+     ============================ */
+  @media (max-width: 968px) {
+    .section { padding: 72px 0; }
+    .hero { padding: 110px 0 60px; }
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .hero-visual {
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .about-img-wrap {
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .services-grid,
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .branches-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 180px;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 24px; right: 24px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(10, 37, 64, 0.08);
+      flex-direction: column;
+      padding: 24px;
+      border-radius: var(--radius);
+      gap: 16px;
+      box-shadow: var(--shadow-lg);
+    }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+  }
+  @media (max-width: 640px) {
+    .container { padding: 0 18px; }
+    .section { padding: 60px 0; }
+    .hero { padding: 100px 0 40px; }
+    .section-head { margin-bottom: 44px; }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.9rem; }
+    .hero-ctas { flex-direction: column; width: 100%; }
+    .hero-ctas .btn { width: 100%; }
+    .hero-trust { gap: 24px; }
+    .trust-item .num { font-size: 1.6rem; }
+    .hero-badge-1 { right: -4%; top: 4%; padding: 12px 14px; }
+    .hero-badge-2 { left: -4%; bottom: 6%; padding: 12px 14px; }
+    .hero-badge-icon { width: 36px; height: 36px; }
+    .services-grid,
+    .testimonials-grid,
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .about-features { grid-template-columns: 1fr; }
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 160px;
+      gap: 12px;
+    }
+    .branch-body { padding: 22px; }
+    .branch-actions .btn { min-width: 0; padding: 12px 16px; font-size: 13px; }
+    .marquee-item { font-size: 1.2rem; gap: 32px; }
+    .wa-float { width: 56px; height: 56px; bottom: 20px; right: 20px; }
+    .wa-float svg { width: 28px; height: 28px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
 </head>
 <body>
-<header class="site-header">
-  <a class="logo" href="#home">SHIVAM <span>OPTICALS</span></a>
-  <button class="menu" aria-label="Open menu">☰</button>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#brands">Brands</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
 
-<main>
-<section id="home" class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">EYEWEAR • LENSES • EYE CARE</p>
-    <h1>See better.<br><em>Look better.</em></h1>
-    <p class="lead">Quality eyewear and personalised service in Sultanpur. Explore frames, lenses and sunglasses for every style.</p>
-    <div class="actions">
-      <a class="btn primary" href="https://wa.me/919999999999?text=Hello%20Shivam%20Opticals%2C%20I%20want%20to%20know%20more." target="_blank">WhatsApp Us</a>
-      <a class="btn secondary" href="#contact">Find Our Stores</a>
+<!-- ============================
+     NAVIGATION
+============================ -->
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#home" class="logo" aria-label="Shivam Opticals home">
+      <span class="logo-mark" aria-hidden="true"></span>
+      Shivam Opticals
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#branches">Branches</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="tel:+919415382565" class="nav-cta">Call Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+</div>
+
+<!-- ============================
+     HERO
+============================ -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">Serving Sultanpur Since 1997</span>
+
+<h1>
+Premium <span class="italic-accent">Eyewear</span>.<br>
+Trusted <span class="italic-accent">Vision Care</span>.
+</h1>
+
+<p class="hero-tagline">
+For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's trusted optical destinations, offering <strong>computerized eye testing</strong>, premium spectacle frames, branded sunglasses, Crizal and other quality lenses, contact lenses, and expert vision care—all under one roof.</p>
+
+        <div class="hero-ctas">
+          <a href="tel:+919569916408" class="btn btn-primary" aria-label="Call Shivam Opticals now">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/919569916408" target="_blank" rel="noopener" class="btn btn-whatsapp" aria-label="Message Shivam Opticals on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+          <a href="https://maps.app.goo.gl/xT6182rfBRjfS7uo7" target="_blank" rel="noopener" class="btn btn-ghost" aria-label="Get directions to Shivam Opticals">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Visit Our Stores
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="num">15<span style="color:var(--blue)">+</span></span>
+            <span class="label">Years of Trust</span>
+          </div>
+          <div class="trust-item">
+            <span class="num">10K<span style="color:var(--blue)">+</span></span>
+            <span class="label">Happy Customers</span>
+          </div>
+          <div class="trust-item">
+            <span class="num">2</span>
+            <span class="label">Branches in Sultanpur</span>
+          </div>
+          <div class="trust-item">
+            <span class="num">Free</span>
+            <span class="label">Eye Testing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-main">
+          <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=900&auto=format&fit=crop&q=80" alt="Person wearing premium eyeglasses from Shivam Opticals" loading="eager" />
+        </div>
+        <div class="hero-badge hero-badge-1">
+          <div class="hero-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="6" cy="14" r="4"/><circle cx="18" cy="14" r="4"/><path d="M10 14h4"/><path d="M2 10s2-2 4-2M22 10s-2-2-4-2"/></svg>
+          </div>
+          <div class="hero-badge-text">
+            <strong>Bluecut Lenses</strong>
+            <span>From ₹499 only</span>
+          </div>
+        </div>
+        <div class="hero-badge hero-badge-2">
+          <div class="hero-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="hero-badge-text">
+            <strong>Free Eye Test</strong>
+            <span>Walk in anytime</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="hero-card">
-  <img src="showroom.jpg" alt="Shivam Opticals showroom in Sultanpur">
-  <div class="hero-overlay">
-    <p>SHIVAM OPTICALS</p>
-    <strong>Serving Sultanpur<br>since 1997</strong>
+</section>
+
+<!-- ============================
+     MARQUEE KEYWORDS
+============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">Bluecut Glasses</div>
+    <div class="marquee-item">Photochromic Lenses</div>
+    <div class="marquee-item">Computer Glasses</div>
+    <div class="marquee-item">Anti Glare Coatings</div>
+    <div class="marquee-item">Designer Sunglasses</div>
+    <div class="marquee-item">Free Eye Testing</div>
+    <div class="marquee-item">Bluecut Glasses</div>
+    <div class="marquee-item">Photochromic Lenses</div>
+    <div class="marquee-item">Computer Glasses</div>
+    <div class="marquee-item">Anti Glare Coatings</div>
+    <div class="marquee-item">Designer Sunglasses</div>
+    <div class="marquee-item">Free Eye Testing</div>
   </div>
 </div>
-</section>
 
-<section id="services" class="section">
-  <p class="eyebrow">WHAT WE OFFER</p>
-  <h2>Everything for your everyday vision.</h2>
-  <div class="grid cards">
-    <article><div class="icon">◉</div><h3>Eyeglasses</h3><p>Everyday, premium and stylish frames for adults and children.</p></article>
-    <article><div class="icon">◎</div><h3>Prescription Lenses</h3><p>Single-vision, progressive, anti-glare and other lens options.</p></article>
-    <article><div class="icon">◌</div><h3>Sunglasses</h3><p>Protect your eyes while finding a style that suits you.</p></article>
-    <article><div class="icon">+</div><h3>Eye Testing</h3><p>Ask us about available eye-testing services at our stores.</p></article>
+<!-- ============================
+     SERVICES
+============================ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Services</span>
+      <h2>Lenses & frames for <span class="italic-accent">every lifestyle</span></h2>
+      <p>From screen-fatigue protection to outdoor sun coverage — we stock the right lens for the way you live, work and play.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/><path d="M11 12h2"/><path d="M2 8s2-1 4-1M22 8s-2-1-4-1"/></svg>
+        </div>
+        <h3>Bluecut Glasses</h3>
+        <p>Filter harmful blue light from phones, laptops and tablets. Stay sharp through long screen hours without strain.</p>
+        <span class="price">From ₹499</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+        </div>
+        <h3>Computer Glasses</h3>
+        <p>Engineered for desk workers, students and gamers — reduce eye fatigue and headaches from extended screen time.</p>
+        <span class="price">From ₹699</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Anti Glare Lenses</h3>
+        <p>Cut reflections from headlights, screens and bright surroundings. Crisper vision day and night with multi-layer AR coating.</p>
+        <span class="price">From ₹399</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <h3>Photochromic Lenses</h3>
+        <p>Smart lenses that darken in sunlight and stay clear indoors. One pair, two purposes — perfect for travel and outdoor work.</p>
+        <span class="price">From ₹899</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11l1.5 6a2 2 0 0 0 2 1.5h7a2 2 0 0 0 2-1.5L19 11"/><circle cx="8" cy="15" r="2.5"/><circle cx="16" cy="15" r="2.5"/></svg>
+        </div>
+        <h3>Sunglasses</h3>
+        <p>UV-protected designer sunglasses for men and women. From bold aviators to minimalist round frames — all 100% UV400.</p>
+        <span class="price">From ₹599</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Free Eye Testing</h3>
+        <p>Complete computerised eye check-up by trained optometrists. Walk in to either branch — no appointment needed, absolutely free.</p>
+        <span class="price">Always Free</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="brands" class="section muted">
-  <p class="eyebrow">BRANDS</p>
-  <h2>Frames you'll recognise. Styles you'll remember.</h2>
-  <div class="brand-list">
-    <span>TITAN</span><span>FASTRACK</span><span>RAY-BAN</span><span>VOGUE</span>
-    <span>PUMA</span><span>FILA</span><span>IDEÉ</span><span>ARMANI</span>
+<!-- ============================
+     ABOUT
+============================ -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=900&auto=format&fit=crop&q=80" alt="Premium eyewear collection at Shivam Opticals showroom in Sultanpur" loading="lazy" />
+        <div class="about-img-tag">
+          <strong>Crafted for comfort</strong>
+          <span>Premium lenses, fitted by experts</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="eyebrow">About Shivam Opticals</span>
+        <h2>A trusted name for <span class="italic-accent">clear vision</span> in Sultanpur</h2>
+        <p>Shivam Opticals has served Sultanpur for over a decade with one simple promise — premium eyewear at prices every family can afford. We pair high-quality international lens technology with stylish, locally-loved frames to deliver eyewear that's comfortable, durable and genuinely flattering.</p>
+        <p>Whether you need bluecut protection for long screen days, photochromic lenses for outdoor commutes, or simply a sharper-looking pair of frames — our trained optometrists guide you to the right choice, with honest pricing and after-sales care that treats you like family.</p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div>
+              <h4>Affordable Pricing</h4>
+              <p>Premium lenses, honest local prices</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
+            </div>
+            <div>
+              <h4>Eye Comfort First</h4>
+              <p>Lenses fitted to your unique vision</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <h4>Stylish Frames</h4>
+              <p>Trending designs for every face shape</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+            </div>
+            <div>
+              <h4>Quality Guarantee</h4>
+              <p>Trusted lenses, lasting service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <p class="note">Availability can vary by store and current stock. Contact us for the latest collection.</p>
 </section>
 
-<section id="about" class="section split">
-  <div>
-    <p class="eyebrow">ABOUT SHIVAM OPTICALS</p>
-    <h2>A local optical store built around trust.</h2>
-  </div>
-  <div>
-    <p>We serve customers in Sultanpur with eyewear, lenses and personal assistance in choosing the right frame and lens combination.</p>
-    <p>Our goal is simple: make buying eyewear comfortable, transparent and convenient.</p>
+<!-- ============================
+     GALLERY
+============================ -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Collection</span>
+      <h2>Frames that turn <span class="italic-accent">heads</span></h2>
+      <p>A glimpse into our showroom — handpicked sunglasses and eyeglasses across classic, modern and trending styles.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item tall">
+        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&auto=format&fit=crop&q=80" alt="Designer aviator sunglasses at Shivam Opticals" loading="lazy" />
+        <div class="gal-label">Aviator Collection</div>
+      </div>
+      <div class="gallery-item wide">
+        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=900&auto=format&fit=crop&q=80" alt="Modern eyeglasses frames" loading="lazy" />
+        <div class="gal-label">Modern Eyeglasses</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=600&auto=format&fit=crop&q=80" alt="Lens detail and bluecut technology" loading="lazy" />
+        <div class="gal-label">Bluecut Lenses</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=600&auto=format&fit=crop&q=80" alt="Premium glasses on display" loading="lazy" />
+        <div class="gal-label">Premium Series</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?w=600&auto=format&fit=crop&q=80" alt="Round frame eyewear" loading="lazy" />
+        <div class="gal-label">Round Frames</div>
+      </div>
+      <div class="gallery-item wide">
+        <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=900&auto=format&fit=crop&q=80" alt="Woman wearing stylish glasses" loading="lazy" />
+        <div class="gal-label">Lifestyle Eyewear</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=600&auto=format&fit=crop&q=80" alt="Classic black sunglasses" loading="lazy" />
+        <div class="gal-label">Classic Black</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="section contact">
-  <p class="eyebrow">VISIT US</p>
-  <h2>Come see us in Sultanpur.</h2>
-  <div class="grid locations">
-    <article>
-      <h3>Main Shop</h3>
-      <p>Shivam Opticals<br>Prayagraj Road, Dariyapur Tiraha<br>Sultanpur, Uttar Pradesh</p>
-      <a href="https://www.google.com/maps/search/?api=1&query=Shivam%20Opticals%20Sultanpur%20Uttar%20Pradesh" target="_blank">Get directions →</a>
-    </article>
-    <article>
-      <h3>Branch</h3>
-      <p>Kasba, KNI Road<br>Near Astha Hospital, Ayodhya Road<br>Sultanpur, Uttar Pradesh</p>
-      <a href="https://www.google.com/maps/search/?api=1&query=Shivam%20Opticals%20KNI%20Road%20Sultanpur" target="_blank">Get directions →</a>
-    </article>
+<!-- ============================
+     BRANCHES
+============================ -->
+<section class="section" id="branches" style="background: linear-gradient(180deg, #f3f6fc 0%, var(--bg) 100%);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Visit Us</span>
+      <h2>Two convenient <span class="italic-accent">branches</span> in Sultanpur</h2>
+      <p>Drop in at either location for a free eye test and a try-on of our latest collection.</p>
+    </div>
+
+    <div class="branches-grid">
+      <article class="branch-card">
+        <iframe
+          class="branch-map"
+          src="https://www.google.com/maps?q=Dariyapur+Tiraha+Prayagraj+Road+Sultanpur+228001&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map of Shivam Opticals Dariyapur Branch"
+          allowfullscreen></iframe>
+        <div class="branch-body">
+          <span class="branch-badge">Branch 01</span>
+          <h3>Shivam Opticals — Dariyapur</h3>
+          <div class="branch-addr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Dariyapur Tiraha, Prayagraj Road,<br>Sultanpur — 228001
+          </div>
+          <div class="branch-actions">
+            <a href="https://maps.app.goo.gl/xT6182rfBRjfS7uo7" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+            <a href="tel:+919415382565" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call Branch
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="branch-card">
+        <iframe
+          class="branch-map"
+          src="https://www.google.com/maps?q=Astha+Hospital+KNI+Road+Kasba+Sultanpur+228001&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map of Shivam Opticals Kasba Branch"
+          allowfullscreen></iframe>
+        <div class="branch-body">
+          <span class="branch-badge">Branch 02</span>
+          <h3>Shivam Opticals — Kasba</h3>
+          <div class="branch-addr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Near Astha Hospital, KNI Road,<br>Kasba, Sultanpur — 228001
+          </div>
+          <div class="branch-actions">
+            <a href="https://maps.app.goo.gl/xKa15XdbpbgidYiZ8?g_st=ac" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+            <a href="tel:+917007290065" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call Branch
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
-</main>
 
+<!-- ============================
+     TESTIMONIALS
+============================ -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What our customers say</span>
+      <h2>Trusted by <span class="italic-accent">thousands</span> across Sultanpur</h2>
+      <p>Real reviews from real customers who chose Shivam Opticals for their family's eyewear.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Got my bluecut glasses here last month — my eye strain from coding all day has reduced massively. Honest pricing and very patient staff. Highly recommend."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">RV</div>
+          <div class="testi-meta">
+            <strong>Rohit Verma</strong>
+            <span>Software Engineer, Sultanpur</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Took my mother for her first eye test — free, thorough, and the staff explained every option in Hindi. Got beautiful photochromic lenses at a price I didn't expect."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">PS</div>
+          <div class="testi-meta">
+            <strong>Priya Singh</strong>
+            <span>Teacher, Kasba</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Best optical store in Sultanpur, hands down. Bought sunglasses for the family — quality is genuine, prices honest. Will keep coming back."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div class="testi-meta">
+            <strong>Amit Kumar</strong>
+            <span>Local Customer, Dariyapur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FAQ
+============================ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Frequently Asked</span>
+      <h2>Lens questions, <span class="italic-accent">answered</span></h2>
+      <p>Everything you need to know about bluecut, anti-glare and photochromic lenses before you buy.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-q">
+          What are Bluecut Glasses and do I really need them?
+          <span class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">Bluecut glasses contain a special coating that filters out harmful high-energy blue light emitted by phones, laptops, LED screens and tablets. If you spend 4+ hours daily on a screen — for work, study or gaming — bluecut lenses noticeably reduce eye strain, headaches and sleep disruption. They can be added to clear glasses, prescription lenses, or worn as zero-power protective eyewear.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          How are Anti Glare lenses different from Bluecut?
+          <span class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">Anti glare (AR) lenses use a multi-layer optical coating to eliminate reflections from headlights, screens and overhead lighting. Bluecut specifically blocks blue light wavelengths from digital screens. For most modern users — especially night drivers and screen-heavy professionals — we recommend a combined AR + Bluecut lens for full-day comfort.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          What are Photochromic lenses and how do they work?
+          <span class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">Photochromic lenses automatically darken when exposed to UV sunlight outdoors and return to clear when you go back indoors. They effectively give you two pairs in one — regular eyeglasses indoors and sunglasses outdoors — without ever switching frames. Perfect for commuters, two-wheeler riders and field workers in Sultanpur's bright sun.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Is the eye testing really free at Shivam Opticals?
+          <span class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">Yes — completely free, no appointment needed. Walk into either our Dariyapur or Kasba branch and our trained optometrists will run a full computerised eye test, explain your prescription, and recommend lenses suited to your lifestyle. There's no obligation to buy.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Do you offer prescription sunglasses?
+          <span class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">Absolutely. We can fit your prescription into nearly any sunglass frame in our collection, including tinted, polarised and UV400 protective lenses. Tell us your prescription (or take a free eye test in-store) and we'll have your custom sunglasses ready in a few days.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          What's the price range for Bluecut glasses in Sultanpur?
+          <span class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">Our bluecut glasses start from just ₹499 for zero-power protective eyewear and from ₹699 for prescription bluecut lenses. We stock options across budgets without compromising on lens quality — the kind of honest pricing that's earned us local loyalty for over a decade.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     CONTACT
+============================ -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow">Get in touch</span>
+        <h2>Call, message or <span class="italic-accent">visit</span> us today</h2>
+        <p class="contact-intro">Reach out on any of our numbers, message us directly on WhatsApp, or simply walk into either branch. We're here every day to help you see — and look — your best.</p>
+
+        <ul class="phone-list">
+          <li><a href="tel:+919415382565">
+            <div class="phone-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="phone-text">
+              <strong>+91 94153 82565</strong>
+              <span>Tap to call — Main line</span>
+            </div>
+          </a></li>
+          <li><a href="tel:+917007290065">
+            <div class="phone-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="phone-text">
+              <strong>+91 70072 90065</strong>
+              <span>Tap to call — Kasba branch</span>
+            </div>
+          </a></li>
+          <li><a href="tel:+919569916408">
+            <div class="phone-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="phone-text">
+              <strong>+91 95699 16408</strong>
+              <span>Tap to call — WhatsApp number</span>
+            </div>
+          </a></li>
+        </ul>
+
+        <a href="https://wa.me/919569916408" target="_blank" rel="noopener" class="btn btn-whatsapp contact-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Message Shivam Opticals on WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-visual">
+        <img src="https://images.unsplash.com/photo-1612442058010-1c98321c2d05?w=800&auto=format&fit=crop&q=80" alt="Optometrist conducting eye test at Shivam Opticals Sultanpur" loading="lazy" />
+        <div class="contact-visual-text">
+          <h4>Walk in for a free eye test</h4>
+          <p>Open daily • Both branches • No appointment needed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+============================ -->
 <footer>
-  <div><strong>SHIVAM OPTICALS</strong><br><span>Eyewear • Lenses • Eye Care</span></div>
-  <a href="https://wa.me/919999999999?text=Hello%20Shivam%20Opticals" target="_blank">WhatsApp</a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark"></span>
+          Shivam Opticals
+        </div>
+        <p>Sultanpur's trusted name for affordable, premium eyewear since over a decade. Bluecut, Photochromic, Computer Glasses and designer Sunglasses — all under one roof, at honest local prices.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/share/14bh6ByCsjP/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/shivamopticals.co?igsh=dW0ydmxsNDJna3Nq" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/919569916408" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#branches">Branches</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Our Services</h5>
+        <ul>
+          <li><a href="#services">Bluecut Glasses</a></li>
+          <li><a href="#services">Computer Glasses</a></li>
+          <li><a href="#services">Anti Glare Lenses</a></li>
+          <li><a href="#services">Photochromic Lenses</a></li>
+          <li><a href="#services">Sunglasses</a></li>
+          <li><a href="#services">Free Eye Testing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Reach Us</h5>
+        <ul>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Dariyapur Tiraha, Prayagraj Road, Sultanpur 228001</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Near Astha Hospital, KNI Road, Kasba, Sultanpur 228001</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>9415382565 · 7007290065 · 9569916408</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="seo-keywords">
+      <strong style="color: rgba(255,255,255,0.5);">Search popular:</strong>
+      Best Optical Store in Sultanpur · Bluecut Glasses in Sultanpur · Computer Glasses Shop Near Me · Photochromic Lenses Sultanpur · Anti Glare Lenses · Sunglasses Shop Sultanpur · Free Eye Testing · Shivam Opticals Dariyapur · Shivam Opticals Kasba
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Shivam Opticals. All rights reserved.</div>
+      <div>Crafted with care in Sultanpur, Uttar Pradesh</div>
+    </div>
+  </div>
 </footer>
-<script src="script.js"></script>
+
+<!-- ============================
+     FLOATING WHATSAPP
+============================ -->
+<a href="https://wa.me/919569916408" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  // Close mobile nav on link click
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Open first FAQ by default
+  const firstFaq = document.querySelector('.faq-item');
+  if (firstFaq) firstFaq.classList.add('open');
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.service-card, .branch-card, .testimonial-card, .gallery-item, .about-feature').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms`;
+    io.observe(el);
+  });
+</script>
+
 </body>
 </html>

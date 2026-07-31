@@ -212,47 +212,39 @@
   .nav {
     max-width: var(--container);
     margin: 0 auto;
-    background: rgba(255,255,255,0.72);
+    background: rgba(17,17,17,0.92);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(10, 37, 64, 0.06);
+    border: 1px solid rgba(255,255,255,.08);
     border-radius: 100px;
-    padding: 10px 14px 10px 24px;
+    padding: 14px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 8px 32px rgba(10, 37, 64, 0.06);
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
   }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Fraunces', serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary);
-    letter-spacing: -0.01em;
-  }
-  .logo-mark {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #111111;   /* changed here */
-    display: grid;
-    place-items: center;
-    position: relative;
-    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.15);
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
 }
-  .logo-mark::before, .logo-mark::after {
-    content: '';
-    position: absolute;
-    width: 10px; height: 10px;
-    border: 1.5px solid #fff;
-    border-radius: 50%;
-    top: 14px;
-  }
-  .logo-mark::before { left: 8px; }
-  .logo-mark::after { right: 8px; }
+
+.brand-logo{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    flex-shrink:0;
+}
+
+.brand-name{
+    height:72px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+}
   .nav-links {
     display: flex;
     align-items: center;
@@ -262,13 +254,13 @@
   .nav-links a {
     font-size: 14px;
     font-weight: 500;
-    color: var(--ink-soft);
+    color: white;
     transition: color 0.2s ease;
     position: relative;
   }
   .nav-links a:hover { color: var(--primary); }
   .nav-cta {
-    background: var(--navy);
+    background:#C1121F;
     color: #fff !important;
     padding: 10px 20px;
     border-radius: 100px;
@@ -276,7 +268,7 @@
     font-weight: 600 !important;
     transition: background 0.2s ease;
   }
-  .nav-cta:hover { background: var(--navy-deep); }
+  .nav-cta:hover { background:#9B101A; }
   .nav-toggle {
     display: none;
     width: 44px; height: 44px;
@@ -676,7 +668,40 @@
   }
   .gallery-item.tall { grid-row: span 2; }
   .gallery-item.wide { grid-column: span 2; }
+/* ============================
+     INSTAGRAM
+============================ */
 
+.instagram{
+    background:#0B0B0B;
+}
+
+.instagram .section-head{
+    text-align:center;
+    margin:0 auto 50px;
+}
+
+.instagram .eyebrow{
+    background:rgba(193,18,31,.18);
+    color:#ff6b75;
+}
+
+.instagram h2{
+    color:#fff;
+}
+
+.instagram p{
+    color:rgba(255,255,255,.72);
+}
+
+.instagram-feed{
+    background:#181818;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    overflow:hidden;
+}
   /* ============================
      BRANCHES
      ============================ */
@@ -894,207 +919,287 @@ color: #ff8b95;
      CONTACT
      ============================ */
   .contact {
-    background: linear-gradient(135deg, #061a30 0%, #0A2540 50%, #1a3a6b 100%);
+    background: linear-gradient(
+        135deg,
+        #0D0D0D 0%,
+        #181818 55%,
+        #2B0A10 100%
+    );
     color: #fff;
     position: relative;
     overflow: hidden;
-  }
-  .contact::before {
-    content: '';
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(30, 107, 255, 0.2) 0%, transparent 70%);
-    top: -200px; right: -200px;
-  }
-  .contact .container { position: relative; z-index: 1; }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .contact h2 { color: #fff; margin-bottom: 20px; }
-  .contact .eyebrow {
-    background: rgba(30, 107, 255, 0.2);
-    color: #7eb0ff;
-  }
-  .contact-intro {
-    color: rgba(255,255,255,0.8);
-    font-size: 1.05rem;
-    margin-bottom: 36px;
-  }
-  .phone-list {
-    list-style: none;
-    display: grid;
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-  .phone-list a {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 18px 22px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius);
-    transition: background 0.25s ease, transform 0.25s ease;
-  }
-  .phone-list a:hover {
-    background: rgba(255,255,255,0.12);
-    transform: translateX(4px);
-  }
-  .phone-icon {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-  }
-  .phone-icon svg { width: 20px; height: 20px; color: #fff; }
-  .phone-text strong {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-  }
-  .phone-text span {
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-  }
-  .contact-whatsapp {
-    width: 100%;
-    padding: 18px 28px;
-    font-size: 16px;
-  }
-  .contact-visual {
-    position: relative;
-    aspect-ratio: 1;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-  }
-  .contact-visual img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-  }
-  .contact-visual::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(10, 37, 64, 0.6) 100%);
-  }
-  .contact-visual-text {
-    position: absolute;
-    bottom: 32px;
-    left: 32px;
-    right: 32px;
-    color: #fff;
-    z-index: 2;
-  }
-  .contact-visual-text h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-  .contact-visual-text p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.85);
-  }
+}
 
+.contact::before {
+    content: '';
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(193,18,31,.22) 0%,
+        transparent 70%
+    );
+    top: -220px;
+    right: -220px;
+}
+
+.contact .container{
+    position:relative;
+    z-index:1;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+}
+
+.contact h2{
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.contact .eyebrow{
+    background:rgba(193,18,31,.18);
+    color:#ff6b75;
+}
+
+.contact-intro{
+    color:rgba(255,255,255,.82);
+    font-size:1.05rem;
+    margin-bottom:36px;
+}
+
+.phone-list{
+    list-style:none;
+    display:grid;
+    gap:14px;
+    margin-bottom:32px;
+}
+
+.phone-list a{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:18px 22px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:var(--radius);
+    transition:all .3s ease;
+}
+
+.phone-list a:hover{
+    background:rgba(255,255,255,.08);
+    border-color:#C1121F;
+    transform:translateY(-3px);
+}
+
+.phone-icon{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:#C1121F;
+    display:grid;
+    place-items:center;
+    flex-shrink:0;
+}
+
+.phone-icon svg{
+    width:20px;
+    height:20px;
+    color:#fff;
+}
+
+.phone-text strong{
+    display:block;
+    font-size:1.25rem;
+    font-weight:600;
+    letter-spacing:.01em;
+}
+
+.phone-text span{
+    font-size:12px;
+    color:rgba(255,255,255,.65);
+}
+
+.contact-whatsapp{
+    width:100%;
+    padding:18px 28px;
+    font-size:16px;
+}
+
+.contact-visual{
+    position:relative;
+    aspect-ratio:1;
+    border-radius:var(--radius-xl);
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+.contact-visual img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.contact-visual::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        transparent 45%,
+        rgba(0,0,0,.75) 100%
+    );
+}
+
+.contact-visual-text{
+    position:absolute;
+    bottom:32px;
+    left:32px;
+    right:32px;
+    color:#fff;
+    z-index:2;
+}
+
+.contact-visual-text h4{
+    font-family:'Fraunces',serif;
+    font-size:1.5rem;
+    font-weight:500;
+    color:#fff;
+    margin-bottom:6px;
+}
+
+.contact-visual-text p{
+    font-size:14px;
+    color:rgba(255,255,255,.82);
+}
   /* ============================
      FOOTER
      ============================ */
-  footer {
-    background: #050d18;
-    color: rgba(255,255,255,0.7);
-    padding: 80px 0 32px;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-    gap: 48px;
-    padding-bottom: 56px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .footer-brand .logo { color: #fff; margin-bottom: 16px; }
-  .footer-brand p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-  .footer-socials {
-    display: flex;
-    gap: 10px;
-  }
-  .footer-socials a {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    display: grid;
-    place-items: center;
-    color: rgba(255,255,255,0.8);
-    transition: background 0.2s ease, transform 0.2s ease;
-  }
-  .footer-socials a:hover {
-    background: var(--accent);
-    color: #fff;
-    transform: translateY(-2px);
-  }
-  .footer-socials svg { width: 16px; height: 16px; }
-  .footer-col h5 {
-    font-family: 'Manrope', sans-serif;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .footer-col ul { list-style: none; display: grid; gap: 12px; }
-  .footer-col a {
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    transition: color 0.2s ease;
-  }
-  .footer-col a:hover { color: var(--blue); }
-  .footer-contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.5;
-  }
-  .footer-contact-item svg {
-    width: 16px; height: 16px;
-    color: var(--blue);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .footer-bottom {
-    padding-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
-  }
-  .seo-keywords {
-    margin-top: 24px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.35);
-    line-height: 1.6;
-  }
+  footer{
+    background:#0B0B0B;
+    color:rgba(255,255,255,.72);
+    padding:80px 0 32px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+    gap:48px;
+    padding-bottom:56px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand .logo{
+    color:#fff;
+    margin-bottom:16px;
+}
+
+.footer-brand p{
+    font-size:14px;
+    color:rgba(255,255,255,.60);
+    line-height:1.8;
+    margin-bottom:24px;
+}
+
+.footer-socials{
+    display:flex;
+    gap:12px;
+}
+
+.footer-socials a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#181818;
+    border:1px solid rgba(255,255,255,.08);
+    display:grid;
+    place-items:center;
+    color:rgba(255,255,255,.82);
+    transition:all .3s ease;
+}
+
+.footer-socials a:hover{
+    background:#C1121F;
+    border-color:#C1121F;
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+.footer-socials svg{
+    width:17px;
+    height:17px;
+}
+
+.footer-col h5{
+    font-family:'Manrope',sans-serif;
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.footer-col ul{
+    list-style:none;
+    display:grid;
+    gap:12px;
+}
+
+.footer-col a{
+    font-size:14px;
+    color:rgba(255,255,255,.65);
+    transition:all .25s ease;
+}
+
+.footer-col a:hover{
+    color:#FF4B5C;
+    padding-left:4px;
+}
+
+.footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:14px;
+    color:rgba(255,255,255,.65);
+    line-height:1.6;
+}
+
+.footer-contact-item svg{
+    width:16px;
+    height:16px;
+    color:#C1121F;
+    flex-shrink:0;
+    margin-top:2px;
+}
+
+.footer-bottom{
+    padding-top:32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size:13px;
+    color:rgba(255,255,255,.48);
+}
+
+.seo-keywords{
+    margin-top:24px;
+    font-size:12px;
+    color:rgba(255,255,255,.40);
+    line-height:1.7;
+}
 
   /* ============================
      FLOATING WHATSAPP
@@ -1223,14 +1328,23 @@ color: #ff8b95;
 ============================ -->
 <div class="nav-wrap">
   <nav class="nav" aria-label="Main navigation">
-    <a href="#home" class="logo" aria-label="Shivam Opticals home">
-      <span class="logo-mark" aria-hidden="true"></span>
-      Shivam Opticals
-    </a>
+    <a href="#home" class="brand" aria-label="Shivam Opticals home">
+
+    <img
+        src="images/Shop logo.jpeg"
+        alt="Shivam Opticals Logo"
+        class="brand-logo">
+
+    <img
+        src="images/signboard 2 d.jpeg"
+        alt="Shivam Opticals"
+        class="brand-name">
+
+</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#instagram">Instagram</a></li>
       <li><a href="#branches">Branches</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="tel:+919415382565" class="nav-cta">Call Now</a></li>
@@ -1275,8 +1389,8 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
 
         <div class="hero-trust">
           <div class="trust-item">
-            <span class="num">15<span style="color:var(--blue)">+</span></span>
-            <span class="label">Years of Trust</span>
+            <span class="num">28<span style="color:var(--blue)">+</span></span>
+<span class="label">Years of Trust</span>
           </div>
           <div class="trust-item">
             <span class="num">10K<span style="color:var(--blue)">+</span></span>
@@ -1475,47 +1589,36 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
 <!-- ============================
      GALLERY
 ============================ -->
-<section class="section" id="gallery">
+<!-- ============================
+     INSTAGRAM
+============================ -->
+<section class="section instagram" id="instagram">
   <div class="container">
+
     <div class="section-head">
-      <span class="eyebrow">Our Collection</span>
-      <h2>Frames that turn <span class="italic-accent">heads</span></h2>
-      <p>A glimpse into our showroom — handpicked sunglasses and eyeglasses across classic, modern and trending styles.</p>
+      <span class="eyebrow">FOLLOW US</span>
+
+      <h2>Inside <span class="italic-accent">Shivam Opticals</span></h2>
+
+      <p>
+        Stay updated with our latest collections, customer transformations,
+        eye testing, special offers and everyday moments from our showroom.
+      </p>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item tall">
-        <img src="images/interior2.jpg" alt="Wide range of Sunglasses and Frames" loading="lazy" />
-        <div class="gal-label">Aviator Collection</div>
+    <div class="instagram-feed">
+
+      <!-- Elfsight Instagram Feed -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+
+      <div class="elfsight-app-070c3cae-8f47-45be-9ff5-caac39dfef6d"
+           data-elfsight-app-lazy>
       </div>
-      <div class="gallery-item wide">
-        <img src="images/father.jpg" alt="Owner of Shivam Opticals" loading="lazy" />
-        <div class="gal-label">Modern Eyeglasses</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/testing.jpg" alt="Computerized eye testing at Shivam Opticals" loading="lazy" />
-        <div class="gal-label">Bluecut Lenses</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/branch.jpg" alt="Our 2nd branch at Kasba, Sultanpur" loading="lazy" />
-        <div class="gal-label">Premium Series</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/branch2.jpg" alt="Our 2nd branch at Kasba, Sultanpur" loading="lazy" />
-        <div class="gal-label">Round Frames</div>
-      </div>
-      <div class="gallery-item wide">
-        <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=900&auto=format&fit=crop&q=80" alt="Woman wearing stylish glasses" loading="lazy" />
-        <div class="gal-label">Lifestyle Eyewear</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=600&auto=format&fit=crop&q=80" alt="Classic black sunglasses" loading="lazy" />
-        <div class="gal-label">Classic Black</div>
-      </div>
+
     </div>
+
   </div>
 </section>
-
 <!-- ============================
      BRANCHES
 ============================ -->
@@ -1800,7 +1903,7 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
           <span class="logo-mark"></span>
           Shivam Opticals
         </div>
-        <p>Sultanpur's trusted name for affordable, premium eyewear since over a decade. Bluecut, Photochromic, Computer Glasses and designer Sunglasses — all under one roof, at honest local prices.</p>
+        <p>Serving Sultanpur since 1997, Shivam Opticals has earned the trust of thousands of families through quality eyewear, expert eye testing, genuine products, and honest pricing. Visit either of our two branches for premium vision care at affordable prices.</p>
         <div class="footer-socials">
           <a href="https://www.facebook.com/share/14bh6ByCsjP/" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -1819,7 +1922,7 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#instagram">Instagram</a></li>
           <li><a href="#branches">Branches</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -1912,7 +2015,8 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-  document.querySelectorAll('.service-card, .branch-card, .testimonial-card, .gallery-item, .about-feature').forEach((el, i) => {
+  document.querySelectorAll(
+'.service-card, .branch-card, .testimonial-card, .about-feature, .instagram-feed').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms`;

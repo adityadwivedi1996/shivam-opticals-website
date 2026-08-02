@@ -619,6 +619,115 @@
     margin: 0;
   }
 
+  /* ============================
+     FOUNDER
+     ============================ */
+  .founder {
+    background: var(--surface);
+  }
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .founder-img-wrap {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    box-shadow: var(--shadow-lg);
+  }
+  .founder-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .founder-img-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    color: #fff;
+  }
+  .founder-img-tag strong {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .founder-img-tag span {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+  .founder-content .eyebrow { margin-bottom: 20px; }
+  .founder-content h2 { margin-bottom: 8px; }
+  .founder-name {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: #C1121F;
+    margin-bottom: 28px;
+    display: block;
+  }
+  .founder-content p {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    margin-bottom: 18px;
+    line-height: 1.75;
+  }
+  .founder-quote {
+    margin-top: 28px;
+    padding: 24px 28px;
+    background: var(--bg);
+    border-left: 3px solid #C1121F;
+    border-radius: var(--radius-sm);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--primary);
+  }
+  .founder-timeline {
+    margin-top: 72px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .founder-timeline-item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3 / 4;
+    box-shadow: var(--shadow);
+  }
+  .founder-timeline-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .founder-timeline-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 16px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.78) 100%);
+    color: #fff;
+  }
+  .founder-timeline-caption strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .founder-timeline-caption span {
+    font-size: 11.5px;
+    opacity: 0.8;
+  }
+
 /* ============================
      INSTAGRAM
 ============================ */
@@ -1200,6 +1309,17 @@ color: #ff8b95;
       max-width: 460px;
       margin: 0 auto;
     }
+    .founder-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .founder-img-wrap {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .founder-timeline {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .contact-grid {
       grid-template-columns: 1fr;
       gap: 48px;
@@ -1258,6 +1378,7 @@ color: #ff8b95;
       grid-template-columns: 1fr;
     }
     .about-features { grid-template-columns: 1fr; }
+    .founder-timeline { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .gallery-grid {
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: 160px;
@@ -1295,6 +1416,7 @@ color: #ff8b95;
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#founder">Founder</a></li>
       <li><a href="#instagram">Instagram</a></li>
       <li><a href="#branches">Branches</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -1531,6 +1653,76 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
               <p>Trusted lenses, lasting service</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOUNDER
+============================ -->
+<section class="section founder" id="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-img-wrap">
+        <img src="images/0208.jpeg" alt="Arvind Dwivedi, Founder of Shivam Opticals, outside the Sultanpur showroom" loading="lazy" />
+        <div class="founder-img-tag">
+          <strong>Arvind Dwivedi</strong>
+          <span>Founder, Shivam Opticals</span>
+        </div>
+      </div>
+
+      <div class="founder-content">
+        <span class="eyebrow">Our Founder</span>
+        <h2>The story behind <span class="italic-accent">Shivam Opticals</span></h2>
+        <span class="founder-name">Arvind Dwivedi</span>
+
+        <p style="font-family:'Fraunces',serif; font-style:italic; font-size:1.15rem; color:var(--primary); margin-bottom:24px;">Some businesses begin with investment.<br>Shivam Opticals began with determination.</p>
+
+        <p>In the early 1980s, tragedy struck our family when <strong>Mr. Shyam Narayan Dwivedi</strong>, an entrepreneur and lawyer, lost his life unexpectedly. His passing left an entire family dependent on his eldest son, <strong>Arvind Dwivedi</strong>, who was still studying in Class 11.</p>
+        <p>Forced to put aside his own dreams of higher education, he stepped forward to support his family. Over the years, he tried one venture after another — not because success was guaranteed, but because giving up was never an option.</p>
+        <p>With the encouragement of his father-in-law, <strong>Mr. Ram Kumar Pandey</strong>, he opened an electronics shop in 1992. Despite his passion for electronics, the business struggled in a small-town economy where many customers couldn't afford such products, and unpaid credit became difficult for a young entrepreneur to recover.</p>
+        <p>He then explored other ventures, including a local cinema projector business, government supply work, and a tent business. Every setback became another lesson rather than the end of the journey.</p>
+        <p>In 1995, a government-allotted PCO finally brought financial stability to the family. But even then, he kept looking ahead.</p>
+        <p>Across the road stood Sitapur Eye Hospital. Seeing people in need of quality eyewear — and noticing an opportunity to offer better service — he introduced a small collection of sunglasses and spectacles alongside the PCO.</p>
+        <p>That simple decision became the beginning of <strong>Shivam Opticals</strong>, named after his newborn son, affectionately called Shivam.</p>
+        <p>What started with just a few frames soon earned the trust of families across Sultanpur through honest advice, fair pricing, and genuine care. As demand grew, prescription eyewear, advanced lenses, and professional eye care became the foundation of the business.</p>
+        <p>Today, more than 30 years later, Shivam Opticals continues to serve the community with the same values on which it was built:</p>
+
+        <div class="founder-quote">
+          Hard work. Integrity. Trust.
+        </div>
+      </div>
+    </div>
+
+    <div class="founder-timeline">
+      <div class="founder-timeline-item">
+        <img src="images/2014.jpeg" alt="Arvind Dwivedi at the original Shivam Opticals shop, early days" loading="lazy" />
+        <div class="founder-timeline-caption">
+          <strong>The Early Days</strong>
+          <span>Behind the counter, c. 2010</span>
+        </div>
+      </div>
+      <div class="founder-timeline-item">
+        <img src="images/2020.jpeg" alt="Puja ceremony before the 2022 renovation of Shivam Opticals" loading="lazy" />
+        <div class="founder-timeline-caption">
+          <strong>A New Chapter</strong>
+          <span>Before the renovation</span>
+        </div>
+      </div>
+      <div class="founder-timeline-item">
+        <img src="images/2022.jpeg" alt="Reopening ceremony of the newly renovated Shivam Opticals showroom in 2022" loading="lazy" />
+        <div class="founder-timeline-caption">
+          <strong>Grand Renovation</strong>
+          <span>Reopening, 2022</span>
+        </div>
+      </div>
+      <div class="founder-timeline-item">
+        <img src="images/0208.jpeg" alt="Arvind Dwivedi standing outside Shivam Opticals showroom today" loading="lazy" />
+        <div class="founder-timeline-caption">
+          <strong>Shivam Opticals Today</strong>
+          <span>Still going strong</span>
         </div>
       </div>
     </div>
@@ -1879,6 +2071,7 @@ class="brand-name">
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About Us</a></li>
+          <li><a href="#founder">Founder</a></li>
           <li><a href="#instagram">Instagram</a></li>
           <li><a href="#branches">Branches</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -1973,7 +2166,7 @@ class="brand-name">
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
   document.querySelectorAll(
-'.service-card, .branch-card, .testimonial-card, .about-feature, .instagram-feed').forEach((el, i) => {
+'.service-card, .branch-card, .testimonial-card, .about-feature, .instagram-feed, .founder-timeline-item').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms`;

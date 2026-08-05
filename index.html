@@ -895,6 +895,17 @@
     box-shadow:0 25px 60px rgba(0,0,0,.35);
     overflow:hidden;
 }
+.reviews-feed{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:24px;
+    padding:30px;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+}
   /* ============================
      BRANCHES
      ============================ */
@@ -2118,70 +2129,20 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
 </section>
 
 <!-- ============================
-     TESTIMONIALS
+     TESTIMONIALS / GOOGLE REVIEWS
 ============================ -->
-<section class="section testimonials">
+<section class="section testimonials" id="reviews">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">What our customers say</span>
       <h2>Trusted by <span class="italic-accent">thousands</span> across Sultanpur</h2>
-      <p>Real reviews from real customers who chose Shivam Opticals for their family's eyewear.</p>
+      <p>Real, live reviews from real customers who chose Shivam Opticals for their family's eyewear.</p>
     </div>
 
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"I had a wonderful experience at Shivam Opticals. The eye check-up was thorough and accurate, the staff was professional, and they helped me find the perfect pair of glasses. Highly recommended!"</blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar">PY</div>
-          <div class="testi-meta">
-            <strong>Pooja Yadav</strong>
-            <span>Local Guide • Google Review</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"Digital eye testing machines, expert guidance, and excellent behaviour with senior citizens. The owner is knowledgeable and uses modern technology. Highly recommended."</blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar">KD</div>
-          <div class="testi-meta">
-            <strong>Krishna Dixit</strong>
-            <span>Local Guide • Computer Engineer</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"Wonderful experience visiting this shop. Various number of specs of different brands available according to the mood 🥳🥳"</blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar">ST</div>
-          <div class="testi-meta">
-            <strong>shubhra upadhyaya</strong>
-            <span>KNIPSS Teacher</span>
-          </div>
-        </div>
-      </div>
+    <div class="reviews-feed">
+      <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-def60710-99de-4b80-a7b5-72b686bf71c8" data-elfsight-app-lazy></div>
     </div>
   </div>
 </section>
@@ -2454,7 +2415,7 @@ class="brand-name">
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
   document.querySelectorAll(
-'.service-card, .branch-card, .testimonial-card, .about-feature, .instagram-feed, .founder-timeline-item').forEach((el, i) => {
+'.service-card, .branch-card, .reviews-feed, .about-feature, .instagram-feed, .founder-timeline-item').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms`;

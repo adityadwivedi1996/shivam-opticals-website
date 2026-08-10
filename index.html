@@ -334,11 +334,11 @@
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 18px;
     list-style: none;
   }
   .nav-links a {
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 500;
     color: white;
     transition: color 0.2s ease;
@@ -661,6 +661,94 @@
     color: var(--ink-soft);
     font-size: 14.5px;
     line-height: 1.6;
+  }
+
+  /* ============================
+     PRODUCT GALLERY
+     ============================ */
+  .gallery-section {
+    background: linear-gradient(180deg, var(--bg) 0%, #f3f6fc 100%);
+  }
+  .gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .gallery-filter {
+    padding: 10px 24px;
+    border-radius: 100px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink-soft);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+  .gallery-filter:hover { border-color: #C1121F; color: #C1121F; }
+  .gallery-filter.active {
+    background: #111111;
+    border-color: #111111;
+    color: #fff;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .product-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .product-img {
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .product-info {
+    padding: 14px 16px 18px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .product-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary);
+  }
+  .product-tag {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #C1121F;
+  }
+  .gallery-cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+  .gallery-cta p {
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    font-size: 0.98rem;
   }
 
   /* ============================
@@ -1479,6 +1567,9 @@ color: #ff8b95;
       grid-template-columns: repeat(3, 1fr);
       grid-auto-rows: 180px;
     }
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
     .footer-grid {
       grid-template-columns: 1fr 1fr;
       gap: 36px;
@@ -1530,6 +1621,12 @@ color: #ff8b95;
       grid-auto-rows: 160px;
       gap: 12px;
     }
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .gallery-filters { gap: 8px; }
+    .gallery-filter { padding: 8px 18px; font-size: 13px; }
     .branch-body { padding: 22px; }
     .branch-actions .btn { min-width: 0; padding: 12px 16px; font-size: 13px; }
     .marquee-item { font-size: 1.2rem; gap: 32px; }
@@ -1562,6 +1659,7 @@ color: #ff8b95;
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#book-test">Book Eye Test</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#founder">Founder</a></li>
       <li><a href="#instagram">Instagram</a></li>
@@ -1827,6 +1925,96 @@ For over <strong>28 years</strong>, Shivam Opticals has been one of Sultanpur's 
       <span class="brand-logo-card"><img src="images/crizal.jpg" alt="Crizal Lenses" loading="lazy" /></span>
       <span class="brand-logo-card"><img src="images/emporio-armani.jpg" alt="Emporio Armani" loading="lazy" /></span>
       <span class="brand-logo-card"><img src="images/police.jpg" alt="Police" loading="lazy" /></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     PRODUCT GALLERY
+============================ -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Browse Our Collection</span>
+      <h2>Frames & <span class="italic-accent">sunglasses</span> in store now</h2>
+      <p>A glimpse of what's on our shelves right now. Visit either branch to try these on, or ask us on WhatsApp.</p>
+    </div>
+
+    <div class="gallery-filters">
+      <button class="gallery-filter active" data-filter="all">All</button>
+      <button class="gallery-filter" data-filter="eyeglasses">Eyeglasses</button>
+      <button class="gallery-filter" data-filter="sunglasses">Sunglasses</button>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/13thcentury.jpeg" alt="13-Century clear frame eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">13-Century</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/fila.jpeg" alt="FILA round metal eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">FILA</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/insistluxury.jpeg" alt="Insist Luxury aviator eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Insist Luxury</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/irus.jpeg" alt="Irus by IDEE aviator eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Irus by IDEE</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/iruseyewear.jpeg" alt="Irus by IDEE square eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Irus by IDEE</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="sunglasses">
+        <div class="product-img"><img src="images/knighthorsepolar.jpeg" alt="Knight Horse polarized sunglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Knight Horse</span><span class="product-tag">Polarized Sunglasses</span></div>
+      </div>
+      <div class="product-card" data-category="sunglasses">
+        <div class="product-img"><img src="images/pgsun.jpeg" alt="Rimless gold sunglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Rimless Series</span><span class="product-tag">Sunglasses</span></div>
+      </div>
+      <div class="product-card" data-category="sunglasses">
+        <div class="product-img"><img src="images/puma.jpeg" alt="Puma hexagon aviator sunglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Puma</span><span class="product-tag">Sunglasses</span></div>
+      </div>
+      <div class="product-card" data-category="sunglasses">
+        <div class="product-img"><img src="images/raybanwayfarer.jpeg" alt="Ray-Ban Wayfarer sunglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Ray-Ban Wayfarer</span><span class="product-tag">Sunglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/scott.jpeg" alt="SCOTT Eyewear half-rim eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">SCOTT Eyewear</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/tommy.jpeg" alt="Tommy Hilfiger rimless eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Tommy Hilfiger</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/tp.jpeg" alt="Anti blue light round eyeglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Anti Blue Light</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="sunglasses">
+        <div class="product-img"><img src="images/velocitypolar.jpeg" alt="Velocity polarized oversized sunglasses" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Velocity</span><span class="product-tag">Polarized Sunglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/wizard.jpeg" alt="Wonder Travis eyewear square frame" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">Wonder Travis</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+      <div class="product-card" data-category="eyeglasses">
+        <div class="product-img"><img src="images/xite.jpeg" alt="X-ite Eyewear rectangular frame" loading="lazy" /></div>
+        <div class="product-info"><span class="product-brand">X-ite Eyewear</span><span class="product-tag">Eyeglasses</span></div>
+      </div>
+    </div>
+
+    <div class="gallery-cta">
+      <p>New pieces arrive every month — this is just a snapshot.</p>
+      <a href="https://wa.me/919569916408" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Ask About a Frame
+      </a>
     </div>
   </div>
 </section>
@@ -2259,6 +2447,7 @@ class="brand-name">
         <h5>Quick Links</h5>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#founder">Founder</a></li>
           <li><a href="#book-test">Book Eye Test</a></li>
@@ -2356,11 +2545,26 @@ class="brand-name">
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
   document.querySelectorAll(
-'.service-card, .branch-card, .reviews-feed, .about-feature, .instagram-feed, .founder-timeline-item').forEach((el, i) => {
+'.service-card, .branch-card, .reviews-feed, .about-feature, .instagram-feed, .founder-timeline-item, .product-card').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 60}ms`;
     io.observe(el);
+  });
+
+  // Product gallery filter
+  const galleryFilters = document.querySelectorAll('.gallery-filter');
+  const productCards = document.querySelectorAll('.product-card');
+  galleryFilters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      galleryFilters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+      productCards.forEach(card => {
+        const show = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
   });
 </script>
 

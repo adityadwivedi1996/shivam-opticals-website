@@ -290,93 +290,13 @@
      ============================ */
   .nav-wrap {
     position: fixed;
-    top: var(--promo-height, 0px);
+    top: 0;
     left: 0; right: 0;
     z-index: 100;
     padding: 16px 24px;
     transition: padding 0.3s ease, top 0.3s ease;
   }
 
-  /* ============================
-     PROMO BANNER (temporary)
-     ============================ */
-  .promo-banner {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 200;
-    box-shadow: 0 4px 16px rgba(0,0,0,.25);
-  }
-  .promo-banner-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    /* Actual Indian flag: horizontal saffron / white / green bands */
-    background: linear-gradient(180deg, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%, #138808 100%);
-    padding: 14px 46px 14px 20px;
-    text-align: center;
-    position: relative;
-  }
-  .promo-chakra {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-    filter: drop-shadow(0 0 2px rgba(255,255,255,.8));
-  }
-  .promo-text {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 2px;
-    font-size: 13.5px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    color: #fff;
-    background: rgba(15,15,15,.6);
-    padding: 8px 16px;
-    border-radius: 10px;
-    line-height: 1.4;
-  }
-  .promo-line2 {
-    display: block;
-    font-weight: 600;
-  }
-  .promo-cta {
-    background: #111111;
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 100px;
-    font-weight: 700;
-    font-size: 12.5px;
-    white-space: nowrap;
-    transition: transform 0.2s ease, background 0.2s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,.3);
-  }
-  .promo-cta:hover { background: #C1121F; transform: translateY(-1px); }
-  .promo-close {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(15,15,15,.55);
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .promo-close:hover { background: rgba(15,15,15,.8); }
-  @media (max-width: 640px) {
-    .promo-text { font-size: 12.5px; }
-    .promo-banner-inner { padding: 12px 40px 12px 14px; }
-  }
   .nav {
     max-width: var(--container);
     margin: 0 auto;
@@ -1721,48 +1641,6 @@ color: #ff8b95;
 <body>
 
 <!-- ============================
-     PROMO BANNER (temporary — Independence Day offer, auto-hides after Aug 19, 2026)
-============================ -->
-<div class="promo-banner" id="promoBanner">
-  <div class="promo-banner-inner">
-    <svg class="promo-chakra" viewBox="0 0 100 100" aria-hidden="true">
-      <circle cx="50" cy="50" r="42" fill="none" stroke="#0A3161" stroke-width="2.5"/>
-      <line x1="56.0" y1="50.0" x2="92.0" y2="50.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="55.8" y1="51.6" x2="90.6" y2="60.9" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="55.2" y1="53.0" x2="86.4" y2="71.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="54.2" y1="54.2" x2="79.7" y2="79.7" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="53.0" y1="55.2" x2="71.0" y2="86.4" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="51.6" y1="55.8" x2="60.9" y2="90.6" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="50.0" y1="56.0" x2="50.0" y2="92.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="48.4" y1="55.8" x2="39.1" y2="90.6" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="47.0" y1="55.2" x2="29.0" y2="86.4" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="45.8" y1="54.2" x2="20.3" y2="79.7" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="44.8" y1="53.0" x2="13.6" y2="71.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="44.2" y1="51.6" x2="9.4" y2="60.9" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="44.0" y1="50.0" x2="8.0" y2="50.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="44.2" y1="48.4" x2="9.4" y2="39.1" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="44.8" y1="47.0" x2="13.6" y2="29.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="45.8" y1="45.8" x2="20.3" y2="20.3" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="47.0" y1="44.8" x2="29.0" y2="13.6" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="48.4" y1="44.2" x2="39.1" y2="9.4" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="50.0" y1="44.0" x2="50.0" y2="8.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="51.6" y1="44.2" x2="60.9" y2="9.4" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="53.0" y1="44.8" x2="71.0" y2="13.6" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="54.2" y1="45.8" x2="79.7" y2="20.3" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="55.2" y1="47.0" x2="86.4" y2="29.0" stroke="#0A3161" stroke-width="2.2"/>
-      <line x1="55.8" y1="48.4" x2="90.6" y2="39.1" stroke="#0A3161" stroke-width="2.2"/>
-      <circle cx="50" cy="50" r="4" fill="#0A3161"/>
-    </svg>
-    <span class="promo-text">
-      <strong>Happy Independence Day!</strong> Celebrate freedom with <strong>50% OFF</strong>
-      <span class="promo-line2">Register to claim. Offer ends August 19!</span>
-    </span>
-    <a href="https://wa.me/919569916408?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%2050%25%20off%20Independence%20Day%20event" target="_blank" rel="noopener" class="promo-cta">Register Now</a>
-    <button class="promo-close" id="promoClose" aria-label="Close offer banner">&times;</button>
-  </div>
-</div>
-
-<!-- ============================
      NAVIGATION
 ============================ -->
 <div class="nav-wrap">
@@ -2635,44 +2513,6 @@ class="brand-name">
 </a>
 
 <script>
-  // Promo banner (temporary — only shows Aug 14–19, 2026)
-  (function() {
-    const banner = document.getElementById('promoBanner');
-    const closeBtn = document.getElementById('promoClose');
-    if (!banner) return;
-
-    const now = new Date();
-    const start = new Date('2026-08-14T00:00:00');
-    const end = new Date('2026-08-19T23:59:59');
-    const dismissed = sessionStorage.getItem('promoDismissed');
-
-    function showBanner() {
-      banner.style.display = 'flex';
-      const h = banner.offsetHeight;
-      document.documentElement.style.setProperty('--promo-height', h + 'px');
-    }
-    function hideBanner() {
-      banner.style.display = 'none';
-      document.documentElement.style.setProperty('--promo-height', '0px');
-    }
-
-    if (now >= start && now <= end && !dismissed) {
-      showBanner();
-      window.addEventListener('resize', () => {
-        if (banner.style.display !== 'none') {
-          document.documentElement.style.setProperty('--promo-height', banner.offsetHeight + 'px');
-        }
-      });
-    } else {
-      hideBanner();
-    }
-
-    closeBtn.addEventListener('click', () => {
-      hideBanner();
-      sessionStorage.setItem('promoDismissed', '1');
-    });
-  })();
-
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');

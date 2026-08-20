@@ -297,100 +297,6 @@
     transition: padding 0.3s ease, top 0.3s ease;
   }
 
-  /* ============================
-     PROMO POPUP (temporary — delete this whole block, the matching
-     HTML block below, and its JS block when the offer ends)
-     ============================ */
-  .promo-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 300;
-    background: rgba(10,10,10,.72);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .promo-modal {
-    position: relative;
-    max-width: 400px;
-    width: 100%;
-    background: #fff;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0,0,0,.5);
-    text-align: center;
-    animation: promoPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  @keyframes promoPop {
-    from { opacity: 0; transform: scale(0.92) translateY(12px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-  }
-  .promo-modal-flag {
-    /* Actual Indian flag: horizontal saffron / white / green bands */
-    background: linear-gradient(180deg, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%, #138808 100%);
-    padding: 28px 24px 22px;
-    position: relative;
-  }
-  .promo-chakra {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto;
-    display: block;
-  }
-  .promo-modal-body {
-    padding: 26px 28px 30px;
-  }
-  .promo-modal-body h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--primary);
-    margin-bottom: 10px;
-  }
-  .promo-modal-body p {
-    color: var(--ink-soft);
-    font-size: 0.98rem;
-    margin-bottom: 24px;
-    line-height: 1.6;
-  }
-  .promo-modal-body .promo-off {
-    color: #C1121F;
-    font-weight: 700;
-  }
-  .promo-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: #111111;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 100px;
-    font-weight: 700;
-    font-size: 14.5px;
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-  .promo-cta:hover { background: #C1121F; transform: translateY(-1px); }
-  .promo-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(0,0,0,.35);
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
-  .promo-close:hover { background: rgba(0,0,0,.55); }
-
   .nav {
     max-width: var(--container);
     margin: 0 auto;
@@ -1766,53 +1672,6 @@ color: #ff8b95;
 <body>
 
 <!-- ============================
-     PROMO POPUP (temporary — Independence Day offer)
-     To remove: delete this whole block, the "PROMO POPUP" CSS block
-     above (near the top of <style>), and the "Promo popup" JS block
-     near the bottom of the page.
-============================ -->
-<div class="promo-overlay" id="promoOverlay">
-  <div class="promo-modal">
-    <button class="promo-close" id="promoClose" aria-label="Close">&times;</button>
-    <div class="promo-modal-flag">
-      <svg class="promo-chakra" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="42" fill="none" stroke="#0A3161" stroke-width="2.5"/>
-        <line x1="56.0" y1="50.0" x2="92.0" y2="50.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="55.8" y1="51.6" x2="90.6" y2="60.9" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="55.2" y1="53.0" x2="86.4" y2="71.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="54.2" y1="54.2" x2="79.7" y2="79.7" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="53.0" y1="55.2" x2="71.0" y2="86.4" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="51.6" y1="55.8" x2="60.9" y2="90.6" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="50.0" y1="56.0" x2="50.0" y2="92.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="48.4" y1="55.8" x2="39.1" y2="90.6" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="47.0" y1="55.2" x2="29.0" y2="86.4" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="45.8" y1="54.2" x2="20.3" y2="79.7" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="44.8" y1="53.0" x2="13.6" y2="71.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="44.2" y1="51.6" x2="9.4" y2="60.9" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="44.0" y1="50.0" x2="8.0" y2="50.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="44.2" y1="48.4" x2="9.4" y2="39.1" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="44.8" y1="47.0" x2="13.6" y2="29.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="45.8" y1="45.8" x2="20.3" y2="20.3" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="47.0" y1="44.8" x2="29.0" y2="13.6" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="48.4" y1="44.2" x2="39.1" y2="9.4" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="50.0" y1="44.0" x2="50.0" y2="8.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="51.6" y1="44.2" x2="60.9" y2="9.4" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="53.0" y1="44.8" x2="71.0" y2="13.6" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="54.2" y1="45.8" x2="79.7" y2="20.3" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="55.2" y1="47.0" x2="86.4" y2="29.0" stroke="#0A3161" stroke-width="2.2"/>
-        <line x1="55.8" y1="48.4" x2="90.6" y2="39.1" stroke="#0A3161" stroke-width="2.2"/>
-        <circle cx="50" cy="50" r="4" fill="#0A3161"/>
-      </svg>
-    </div>
-    <div class="promo-modal-body">
-      <h3>Happy Independence Day!</h3>
-      <p>Celebrate freedom with <span class="promo-off">50% OFF</span> — register now to claim your discount.</p>
-      <a href="https://wa.me/919569916408?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%2050%25%20off%20Independence%20Day%20event" target="_blank" rel="noopener" class="promo-cta">Register for Offer</a>
-    </div>
-  </div>
-</div>
-
-<!-- ============================
      NAVIGATION
 ============================ -->
 <div class="nav-wrap">
@@ -2688,30 +2547,6 @@ class="brand-name">
 </a>
 
 <script>
-  // Promo popup (temporary — Independence Day offer)
-  // To remove: delete this whole block, along with the "PROMO POPUP"
-  // HTML block and CSS block elsewhere in this file.
-  (function() {
-    const overlay = document.getElementById('promoOverlay');
-    const closeBtn = document.getElementById('promoClose');
-    if (!overlay) return;
-
-    const dismissed = sessionStorage.getItem('promoDismissed');
-    if (!dismissed) {
-      overlay.style.display = 'flex';
-    }
-
-    function closePromo() {
-      overlay.style.display = 'none';
-      sessionStorage.setItem('promoDismissed', '1');
-    }
-
-    closeBtn.addEventListener('click', closePromo);
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closePromo();
-    });
-  })();
-
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');

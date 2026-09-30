@@ -498,12 +498,24 @@
     transition: opacity 1s ease;
   }
   .hero-img-layer.is-active { opacity: 1; }
-  /* Special case: the owner portrait is shot in portrait orientation — showing it via
-     object-fit:contain in a wide 16:9 frame would leave it tiny with huge empty margins,
-     so this one slide is zoomed/cropped with the face kept centered instead. */
-  .hero-img-layer[data-face-crop="true"] {
-    object-fit: cover;
-    object-position: center 15%;
+  .hero-eyebrow-badge {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 9px 16px;
+    border-radius: 100px;
   }
   .hero-img-main::after {
     content: '';
@@ -1908,6 +1920,7 @@ color: #ff8b95;
     .hero-cta-btn { font-size: 11.5px; padding: 9px 8px; gap: 5px; }
     .hero-cta-btn svg { width: 13px; height: 13px; }
     .hero-dots { top: 12px; right: 14px; }
+    .hero-eyebrow-badge { top: 12px; left: 14px; font-size: 11px; padding: 7px 12px; }
     .services-grid,
     .testimonials-grid,
     .footer-grid {
@@ -1986,22 +1999,19 @@ color: #ff8b95;
 ============================ -->
 <section class="hero" id="home">
   <div class="container">
-    <span class="eyebrow">Serving Sultanpur Since 1997</span>
-
     <div class="hero-visual">
       <div class="hero-img-main" id="heroImgMain">
-        <div class="hero-img-backdrop is-active" id="heroBackdropA" style="background-image: url('images/ownerhero.jpeg');"></div>
-        <div class="hero-img-backdrop" id="heroBackdropB" style="background-image: url('images/interiorshivam.jpeg');"></div>
-        <img id="heroImgA" src="images/ownerhero.jpeg" data-face-crop="true" alt="Shivam Opticals — owner at the store counter" loading="eager" class="hero-img-layer is-active" />
-        <img id="heroImgB" src="images/interiorshivam.jpeg" alt="Shivam Opticals store interior" loading="lazy" class="hero-img-layer" />
+        <div class="hero-img-backdrop is-active" id="heroBackdropA" style="background-image: url('images/hero.jpg');"></div>
+        <div class="hero-img-backdrop" id="heroBackdropB" style="background-image: url('images/insideshivamopticals.jpeg');"></div>
+        <img id="heroImgA" src="images/hero.jpg" alt="Shivam Opticals storefront" loading="eager" class="hero-img-layer is-active" />
+        <img id="heroImgB" src="images/insideshivamopticals.jpeg" alt="Shivam Opticals store, frames on display" loading="lazy" class="hero-img-layer" />
       </div>
+
+      <span class="hero-eyebrow-badge">Serving Sultanpur Since 1997</span>
 
       <div class="hero-dots" id="heroDots">
         <span class="hero-dot active" data-index="0"></span>
         <span class="hero-dot" data-index="1"></span>
-        <span class="hero-dot" data-index="2"></span>
-        <span class="hero-dot" data-index="3"></span>
-        <span class="hero-dot" data-index="4"></span>
       </div>
 
       <div class="hero-cta-panel">
@@ -2888,11 +2898,12 @@ class="brand-name">
   // Two <img> layers + two backdrop divs are swapped back and forth so only
   // two images are ever in the DOM at once (no extra network weight upfront).
   (function() {
+    // Only photos at 1600x900 or higher (or hero.jpg, handled as a special-case
+    // square image below) belong in this list — small/blurry shots were dropped
+    // per the "least acceptable dimension" rule. Add more filenames here as
+    // higher-res photos are uploaded to the images folder.
     const slides = [
-      { src: 'images/ownerhero.jpeg',           alt: 'Shivam Opticals — owner at the store counter', faceCrop: true },
-      { src: 'images/interiorshivam.jpeg',       alt: 'Shivam Opticals store interior' },
-      { src: 'images/frontviewshivam.jpeg',      alt: 'Shivam Opticals shop front' },
-      { src: 'images/storeinside.jpeg',          alt: 'Inside Shivam Opticals store' },
+      { src: 'images/hero.jpg',                 alt: 'Shivam Opticals storefront' },
       { src: 'images/insideshivamopticals.jpeg', alt: 'Shivam Opticals store, frames on display' }
     ];
 
@@ -2909,11 +2920,6 @@ class="brand-name">
     function applySlide(imgEl, backdropEl, slide) {
       imgEl.src = slide.src;
       imgEl.alt = slide.alt;
-      if (slide.faceCrop) {
-        imgEl.setAttribute('data-face-crop', 'true');
-      } else {
-        imgEl.removeAttribute('data-face-crop');
-      }
       backdropEl.style.backgroundImage = `url('${slide.src}')`;
     }
 

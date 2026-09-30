@@ -181,6 +181,8 @@
   --accent: #C1121F;
   --accent-light: #FFE9EB;
   --accent-hover: #9B101A;
+  /* Lighter accent for legibility on dark section backgrounds (eyebrows, hover links on dark) */
+  --accent-tint: #FF7A85;
 
   /* WhatsApp (kept as its own token since it's a recognizable brand color, not our accent) */
   --whatsapp: #25D366;
@@ -481,6 +483,17 @@
     position: absolute;
     inset: 0;
   }
+  /* Visit Us section reuses the same crossfade component at a smaller scale */
+  .visit-visual {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
   /* Blurred duplicate fills empty space behind letterboxed (contain) images without cropping them */
   .hero-img-backdrop {
     position: absolute;
@@ -530,7 +543,7 @@
     pointer-events: none;
     z-index: 2;
   }
-  .hero-dots {
+  .visit-dots {
     position: absolute;
     top: 18px;
     right: 20px;
@@ -538,14 +551,14 @@
     display: flex;
     gap: 7px;
   }
-  .hero-dot {
+  .visit-dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
     background: rgba(255,255,255,0.4);
     transition: background 0.3s ease, transform 0.3s ease;
   }
-  .hero-dot.active {
+  .visit-dot.active {
     background: #fff;
     transform: scale(1.2);
   }
@@ -671,18 +684,18 @@
   .brands-track {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
     width: max-content;
-    animation: scroll 48s linear infinite;
+    animation: scroll 85s linear infinite;
   }
   .brand-logo-card {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 110px;
+    width: 156px;
     aspect-ratio: 1 / 1;
-    padding: 20px;
+    padding: 26px;
     background: #fff;
     border: 1px solid var(--line);
     border-radius: var(--radius-sm);
@@ -709,61 +722,73 @@
   .brand-logo-card:hover img { transform: scale(1.06); }
 
   /* ============================
-     SERVICES
+     SHOP BY NEED — MOVING TILE MARQUEE
      ============================ */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .service-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
-    position: relative;
+  .need-tile-marquee {
     overflow: hidden;
+    padding: 8px 0 4px;
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   }
-  .service-card::before {
-    content: '';
+  .need-tile-track {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    width: max-content;
+    animation: need-tile-scroll 42s linear infinite;
+  }
+  .need-tile-marquee:hover .need-tile-track { animation-play-state: paused; }
+  @keyframes need-tile-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .need-tile {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    width: 230px;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  }
+  .need-tile img {
     position: absolute;
-    top: 0; left: 0; right: 0; height: 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    transition: height 0.4s ease;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .service-card:hover {
+  .need-tile:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
-    border-color: transparent;
   }
-  .service-card:hover::before { height: 4px; }
-  .service-icon {
-    width: 64px; height: 64px;
-    border-radius: 18px;
-    background: var(--accent-light);
-    color: var(--accent);
-    display: grid;
-    place-items: center;
-    margin-bottom: 24px;
-    transition: transform 0.3s ease;
+  .need-tile:hover img { transform: scale(1.06); }
+  .need-tile-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 20px 16px 16px;
+    background: linear-gradient(0deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.45) 55%, rgba(10,10,10,0) 100%);
+    color: #fff;
   }
-  .service-card:hover .service-icon {
-    transform: scale(1.08) rotate(-4deg);
-  }
-  .service-icon svg { width: 30px; height: 30px; stroke-width: 1.5; }
-  .service-card h3 {
-    margin-bottom: 10px;
+  .need-tile-caption h3 {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    color: var(--primary);
+    margin-bottom: 4px;
   }
-  .service-card p {
-    color: var(--ink-soft);
-    font-size: 14.5px;
-    line-height: 1.6;
+  .need-tile-caption p {
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.85);
+  }
+  @media (max-width: 640px) {
+    .need-tile { width: 180px; }
+    .need-tile-caption h3 { font-size: 0.9rem; }
+    .need-tile-caption p { font-size: 11.5px; }
   }
 
   /* ============================
@@ -779,7 +804,7 @@
   }
   .book-test-content .eyebrow {
     background: rgba(193, 18, 31, 0.2);
-    color: #ff8b95;
+    color: var(--accent-tint);
   }
   .book-test-content h2 { color: #fff; margin-bottom: 16px; }
   .book-test-content > p {
@@ -1137,7 +1162,7 @@
 
 .instagram .eyebrow{
     background:rgba(193,18,31,.18);
-    color:#ff6b75;
+    color:var(--accent-tint);
 }
 
 .instagram h2{
@@ -1317,7 +1342,7 @@ radial-gradient(circle at 80% 70%, rgba(193, 18, 31, 0.10) 0%, transparent 50%);
   .testimonials .section-head p { color: rgba(255,255,255,0.7); }
   .testimonials .eyebrow {
     background: rgba(193, 18, 31, 0.15);
-color: #ff8b95;
+color: var(--accent-tint);
   }
   .testimonials-grid {
     display: grid;
@@ -1557,7 +1582,7 @@ color: #ff8b95;
 
 .contact .eyebrow{
     background:rgba(193,18,31,.18);
-    color:#ff6b75;
+    color:var(--accent-tint);
 }
 
 .contact-intro{
@@ -1755,7 +1780,7 @@ color: #ff8b95;
 }
 
 .footer-col a:hover{
-    color:#FF4B5C;
+    color:var(--accent-tint);
     padding-left:4px;
 }
 
@@ -1932,7 +1957,7 @@ color: #ff8b95;
     .hero-visual { aspect-ratio: 3 / 4.2; border-radius: var(--radius); margin-bottom: 28px; }
     .hero-cta-btn { font-size: 11.5px; padding: 9px 8px; gap: 5px; }
     .hero-cta-btn svg { width: 13px; height: 13px; }
-    .hero-dots { top: 12px; right: 14px; }
+    .visit-dots { top: 12px; right: 14px; }
     .hero-eyebrow-badge { top: 12px; left: 14px; font-size: 11px; padding: 7px 12px; }
     .services-grid,
     .testimonials-grid,
@@ -1982,9 +2007,10 @@ color: #ff8b95;
 
 </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
+      <li><a href="#services">Shop By Need</a></li>
       <li><a href="#book-test">Book Eye Test</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit-us">Visit Us</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#founder">Founder</a></li>
       <li><a href="#instagram">Instagram</a></li>
@@ -2014,22 +2040,11 @@ color: #ff8b95;
   <div class="container">
     <div class="hero-visual">
       <div class="hero-img-main" id="heroImgMain">
-        <div class="hero-img-backdrop is-active" id="heroBackdropA" style="background-image: url('images/hero.jpg');"></div>
-        <div class="hero-img-backdrop" id="heroBackdropB" style="background-image: url('images/insideshivamopticals.jpeg');"></div>
-        <img id="heroImgA" src="images/hero.jpg" alt="Shivam Opticals storefront" loading="eager" class="hero-img-layer is-active" />
-        <img id="heroImgB" src="images/insideshivamopticals.jpeg" alt="Shivam Opticals store, frames on display" loading="lazy" class="hero-img-layer" />
+        <div class="hero-img-backdrop is-active" style="background-image: url('images/hero.jpg');"></div>
+        <img src="images/hero.jpg" alt="Shivam Opticals storefront" loading="eager" class="hero-img-layer is-active" />
       </div>
 
       <span class="hero-eyebrow-badge">Serving Sultanpur Since 1997</span>
-
-      <div class="hero-dots" id="heroDots">
-        <span class="hero-dot active" data-index="0"></span>
-        <span class="hero-dot" data-index="1"></span>
-        <span class="hero-dot" data-index="2"></span>
-        <span class="hero-dot" data-index="3"></span>
-        <span class="hero-dot" data-index="4"></span>
-        <span class="hero-dot" data-index="5"></span>
-      </div>
 
       <div class="hero-cta-panel">
         <a href="tel:+919415382565" class="hero-cta-btn hero-cta-primary" aria-label="Call Shivam Opticals now">
@@ -2109,65 +2124,181 @@ color: #ff8b95;
 <section class="section" id="services">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Our Services</span>
-      <h2>Lenses & frames for <span class="italic-accent">every lifestyle</span></h2>
-      <p>From screen-fatigue protection to outdoor sun coverage — we stock the right lens for the way you live, work and play.</p>
+      <span class="eyebrow">Shop By Need</span>
+      <h2>Find <span class="italic-accent">exactly</span> what you came for</h2>
+      <p>Tap a category to see what's available — or just walk in and ask, we'll point you the right way.</p>
     </div>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/><path d="M11 12h2"/><path d="M2 8s2-1 4-1M22 8s-2-1-4-1"/></svg>
+  </div>
+
+  <div class="need-tile-marquee" aria-label="Shop by category — clip-on frames, kids' eyewear, power sunglasses, contact lenses, smart lens coatings, progressive lenses, myopia control, and repair services">
+    <div class="need-tile-track">
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20clip-on%20sunglasses." target="_blank" rel="noopener" class="need-tile">
+        <img src="images/tile-clipon.png" alt="Magnetic clip-on sunglasses on eyeglasses frame" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>One Frame, Two Looks</h3>
+          <p>Magnetic clip-on sunglasses — snap on, step outside.</p>
         </div>
-        <h3>Bluecut Glasses</h3>
-        <p>Filter harmful blue light from phones, laptops and tablets. Stay sharp through long screen hours without strain.</p>
-        
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20looking%20for%20kids%27%20eyewear." target="_blank" rel="noopener" class="need-tile">
+        <img src="images/tile-kids.png" alt="Kids' eyewear, colourful and playful" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Eyewear Kids Love Wearing</h3>
+          <p>Durable, playful frames sized right for growing faces.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20power%20sunglasses." target="_blank" rel="noopener" class="need-tile">
+        <img src="images/tile-sunglasses.png" alt="Power sunglasses with prescription lens" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Power Sunglasses</h3>
+          <p>Your prescription, built into UV400 sunglasses.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20contact%20lenses." target="_blank" rel="noopener" class="need-tile">
+        <img src="images/tile-contactlens.png" alt="Contact lens on fingertip" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Contact Lenses</h3>
+          <p>Daily, monthly and coloured lenses — fitted right.</p>
+        </div>
+      </a>
+
+      <a href="#services" class="need-tile">
+        <img src="images/tile-lensfeatures.png" alt="Bluecut, photochromic, anti-glare and night-driving lens features" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Smart Lens Coatings</h3>
+          <p>Bluecut · Photochromic · Anti-Glare · Night Driving.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20progressive%20lenses." target="_blank" rel="noopener" class="need-tile">
+        <img src="images/tile-progressive.png" alt="Progressive varifocal lenses" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Progressive Lenses</h3>
+          <p>One pair for near, far and everything between — no lines.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27d%20like%20to%20know%20more%20about%20Essilor%20myopia%20control%20for%20my%20child." target="_blank" rel="noopener" class="need-tile">
+        <img src="images/tile-myopia.png" alt="Essilor myopia control lenses for children" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Myopia Control for Kids</h3>
+          <p>Essilor lenses that help slow the rise in your child's power.</p>
+        </div>
+      </a>
+
+      <a href="#book-test" class="need-tile">
+        <img src="images/tile-services.png" alt="Eyewear repair and adjustment workbench" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Test, Fit & Repair</h3>
+          <p>Free eye test, frame adjustment, same-day fitting.</p>
+        </div>
+      </a>
+
+      <!-- duplicate set for seamless infinite loop -->
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20clip-on%20sunglasses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-clipon.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>One Frame, Two Looks</h3>
+          <p>Magnetic clip-on sunglasses — snap on, step outside.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20looking%20for%20kids%27%20eyewear." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-kids.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Eyewear Kids Love Wearing</h3>
+          <p>Durable, playful frames sized right for growing faces.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20power%20sunglasses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-sunglasses.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Power Sunglasses</h3>
+          <p>Your prescription, built into UV400 sunglasses.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20contact%20lenses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-contactlens.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Contact Lenses</h3>
+          <p>Daily, monthly and coloured lenses — fitted right.</p>
+        </div>
+      </a>
+
+      <a href="#services" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-lensfeatures.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Smart Lens Coatings</h3>
+          <p>Bluecut · Photochromic · Anti-Glare · Night Driving.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20progressive%20lenses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-progressive.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Progressive Lenses</h3>
+          <p>One pair for near, far and everything between — no lines.</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27d%20like%20to%20know%20more%20about%20Essilor%20myopia%20control%20for%20my%20child." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-myopia.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Myopia Control for Kids</h3>
+          <p>Essilor lenses that help slow the rise in your child's power.</p>
+        </div>
+      </a>
+
+      <a href="#book-test" class="need-tile" aria-hidden="true" tabindex="-1">
+        <img src="images/tile-services.png" alt="" loading="lazy" />
+        <div class="need-tile-caption">
+          <h3>Test, Fit & Repair</h3>
+          <p>Free eye test, frame adjustment, same-day fitting.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     VISIT US — SHOP INTERIOR/EXTERIOR
+============================ -->
+<section class="section visit-section" id="visit-us">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Behind The Counter</span>
+      <h2>The real <span class="italic-accent">Shivam Opticals</span> — no filters</h2>
+      <p>Two branches, one team, decades of frame-fitting experience. Here's what you'll actually walk into.</p>
+    </div>
+
+    <div class="visit-visual">
+      <div class="hero-img-main" id="visitImgMain">
+        <div class="hero-img-backdrop is-active" id="visitBackdropA" style="background-image: url('images/hero.jpg');"></div>
+        <div class="hero-img-backdrop" id="visitBackdropB" style="background-image: url('images/insideshivamopticals.jpeg');"></div>
+        <img id="visitImgA" src="images/hero.jpg" alt="Shivam Opticals storefront" loading="lazy" class="hero-img-layer is-active" />
+        <img id="visitImgB" src="images/insideshivamopticals.jpeg" alt="Shivam Opticals store, frames on display" loading="lazy" class="hero-img-layer" />
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
-        </div>
-        <h3>Computer Glasses</h3>
-        <p>Engineered for desk workers, students and gamers — reduce eye fatigue and headaches from extended screen time.</p>
-        
+      <div class="visit-dots" id="visitDots">
+        <span class="visit-dot active" data-index="0"></span>
+        <span class="visit-dot" data-index="1"></span>
+        <span class="visit-dot" data-index="2"></span>
+        <span class="visit-dot" data-index="3"></span>
+        <span class="visit-dot" data-index="4"></span>
+        <span class="visit-dot" data-index="5"></span>
       </div>
+    </div>
 
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        </div>
-        <h3>Anti Glare Lenses</h3>
-        <p>Cut reflections from headlights, screens and bright surroundings. Crisper vision day and night with multi-layer AR coating.</p>
-        
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </div>
-        <h3>Photochromic Lenses</h3>
-        <p>Smart lenses that darken in sunlight and stay clear indoors. One pair, two purposes — perfect for travel and outdoor work.</p>
-        
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11l1.5 6a2 2 0 0 0 2 1.5h7a2 2 0 0 0 2-1.5L19 11"/><circle cx="8" cy="15" r="2.5"/><circle cx="16" cy="15" r="2.5"/></svg>
-        </div>
-        <h3>Sunglasses</h3>
-        <p>UV-protected designer sunglasses for men and women. From bold aviators to minimalist round frames — all 100% UV400.</p>
-        
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3>Free Eye Testing</h3>
-        <p>Complete computerised eye check-up by trained optometrists. <a href="#book-test" style="color:var(--accent); font-weight:600; text-decoration:underline;">Book your free slot online</a>, then walk right in at your chosen time.</p>
-        <span class="price">Always Free</span>
-      </div>
+    <div class="gallery-cta">
+      <a href="https://maps.app.goo.gl/xT6182rfBRjfS7uo7" target="_blank" rel="noopener" class="btn btn-catalogue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Get Directions
+      </a>
     </div>
   </div>
 </section>
@@ -2827,8 +2958,9 @@ class="brand-name">
       <div class="footer-col">
         <h5>Quick Links</h5>
         <ul>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#services">Shop By Need</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#visit-us">Visit Us</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#founder">Founder</a></li>
           <li><a href="#book-test">Book Eye Test</a></li>
@@ -2915,7 +3047,7 @@ class="brand-name">
       .forEach(el => { el.textContent = yearsInBusiness; });
   })();
 
-  // Hero image rotation — crossfades through the real shop photos every 4.5s.
+  // "Visit Us" gallery rotation — crossfades through the real shop photos every 4.5s.
   // Two <img> layers + two backdrop divs are swapped back and forth so only
   // two images are ever in the DOM at once (no extra network weight upfront).
   (function() {
@@ -2932,11 +3064,11 @@ class="brand-name">
       { src: 'images/ownerinshivam1.jpeg',       alt: 'Shivam Opticals — owner at the store, wide view' }
     ];
 
-    const imgA = document.getElementById('heroImgA');
-    const imgB = document.getElementById('heroImgB');
-    const backdropA = document.getElementById('heroBackdropA');
-    const backdropB = document.getElementById('heroBackdropB');
-    const dots = document.querySelectorAll('#heroDots .hero-dot');
+    const imgA = document.getElementById('visitImgA');
+    const imgB = document.getElementById('visitImgB');
+    const backdropA = document.getElementById('visitBackdropA');
+    const backdropB = document.getElementById('visitBackdropB');
+    const dots = document.querySelectorAll('#visitDots .visit-dot');
     if (!imgA || !imgB || slides.length === 0) return;
 
     let current = 0;   // index of slide currently showing

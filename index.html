@@ -471,14 +471,12 @@
     letter-spacing: 0.02em;
   }
 
-  /* Hero Visual — full-width rotating banner */
+  /* Hero Visual — full-bleed edge-to-edge banner, matches the 1920x600 source images */
   .hero-visual {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--radius-xl);
+    aspect-ratio: 16 / 5;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
     margin-bottom: 40px;
     animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
   }
@@ -1905,7 +1903,7 @@ color: var(--accent-tint);
     .hero-ctas .btn { width: 100%; }
     .hero-trust { gap: 20px 24px; }
     .trust-item .num { font-size: 1.6rem; }
-    .hero-visual { border-radius: var(--radius); margin-bottom: 28px; }
+    .hero-visual { aspect-ratio: 16 / 9; margin-bottom: 28px; }
     .visit-dots { top: 12px; right: 14px; }
     .hero-dots { bottom: 12px; }
     .services-grid,
@@ -1986,12 +1984,11 @@ color: var(--accent-tint);
      HERO
 ============================ -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-visual">
-      <img id="heroSlideA" src="images/h-titan.png" alt="Titan Rimless eyewear" loading="eager" class="hero-slide-layer is-active" />
-      <img id="heroSlideB" src="images/h-irus.png" alt="IRUS eyewear" loading="lazy" class="hero-slide-layer" />
-      <div class="hero-dots" id="heroDots">
-        <span class="dot active" data-index="0"></span>
+  <div class="hero-visual">
+    <img id="heroSlideA" src="images/h-titan.png" alt="Titan Rimless eyewear" loading="eager" class="hero-slide-layer is-active" />
+    <img id="heroSlideB" src="images/h-irus.png" alt="IRUS eyewear" loading="lazy" class="hero-slide-layer" />
+    <div class="hero-dots" id="heroDots">
+      <span class="dot active" data-index="0"></span>
         <span class="dot" data-index="1"></span>
         <span class="dot" data-index="2"></span>
         <span class="dot" data-index="3"></span>
@@ -1999,8 +1996,9 @@ color: var(--accent-tint);
         <span class="dot" data-index="5"></span>
         <span class="dot" data-index="6"></span>
       </div>
-    </div>
+  </div>
 
+  <div class="container">
     <div class="hero-content">
       <span class="eyebrow">Serving Sultanpur Since 1997</span>
       <h1>

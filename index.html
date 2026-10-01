@@ -210,6 +210,11 @@
     padding: 0 24px;
   }
   .section { padding: 96px 0; position: relative; }
+  /* The tile marquee sits flush at the end of #services with no bottom margin of
+     its own, so stacking two full section paddings back-to-back here reads as a
+     big dead gap — trim both sides of this one boundary. */
+  #services { padding-bottom: 40px; }
+  .visit-section { padding-top: 40px; }
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -1903,7 +1908,7 @@ color: var(--accent-tint);
     .hero-ctas .btn { width: 100%; }
     .hero-trust { gap: 20px 24px; }
     .trust-item .num { font-size: 1.6rem; }
-    .hero-visual { aspect-ratio: 16 / 9; margin-bottom: 28px; }
+    .hero-visual { margin-bottom: 28px; }
     .visit-dots { top: 12px; right: 14px; }
     .hero-dots { bottom: 12px; }
     .services-grid,
@@ -1955,12 +1960,10 @@ color: var(--accent-tint);
 </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Shop By Need</a></li>
-      <li><a href="#book-test">Book Eye Test</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#visit-us">Visit Us</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#founder">Founder</a></li>
-      <li><a href="#instagram">Instagram</a></li>
+      <li><a href="#visit-us">Instagram</a></li>
       <li><a href="#branches">Branches</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="blog/index.html">Blog</a></li>
@@ -2224,9 +2227,9 @@ color: var(--accent-tint);
 <section class="section visit-section" id="visit-us">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Behind The Counter</span>
-      <h2>The real <span class="italic-accent">Shivam Opticals</span> — no filters</h2>
-      <p>Two branches, one team, decades of frame-fitting experience. Here's what you'll actually walk into.</p>
+      <span class="eyebrow">Follow Us</span>
+      <h2>Inside <span class="italic-accent">Shivam Opticals</span></h2>
+      <p>Two branches, one team, decades of frame-fitting experience — here's what you'll actually walk into. Follow along on Instagram for new arrivals and everyday moments from our showroom.</p>
     </div>
 
     <div class="visit-visual">
@@ -2252,6 +2255,20 @@ color: var(--accent-tint);
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Get Directions
       </a>
+    </div>
+
+    <div class="instagram-feed">
+      <div class="insta-follow-card">
+        <div class="insta-follow-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </div>
+        <h3>@shivamopticals.co</h3>
+        <p>Follow along for new arrivals, customer moments, and offers straight from our showroom.</p>
+        <a href="https://www.instagram.com/shivamopticals.co" target="_blank" rel="noopener" class="btn btn-catalogue">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          Follow on Instagram
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -2362,7 +2379,6 @@ color: var(--accent-tint);
     <div class="gallery-filters">
       <button class="gallery-filter active" data-filter="all">All</button>
       <button class="gallery-filter" data-filter="eyeglasses">Eyeglasses</button>
-      <button class="gallery-filter" data-filter="sunglasses">Sunglasses</button>
     </div>
 
     <div class="product-grid">
@@ -2504,7 +2520,7 @@ color: var(--accent-tint);
   <div class="container">
     <div class="founder-grid">
       <div class="founder-img-wrap">
-        <img src="images/0208.jpeg" alt="Arvind Dwivedi, Founder of Shivam Opticals, outside the Sultanpur showroom" loading="lazy" />
+        <img src="images/1111.jpeg" alt="Arvind Dwivedi, Founder of Shivam Opticals, outside the Sultanpur showroom" loading="lazy" />
         <div class="founder-img-tag">
           <strong>Arvind Dwivedi</strong>
           <span>Founder, Shivam Opticals</span>
@@ -2570,39 +2586,6 @@ color: var(--accent-tint);
 <!-- ============================
      GALLERY
 ============================ -->
-<!-- ============================
-     INSTAGRAM
-============================ -->
-<section class="section instagram" id="instagram">
-  <div class="container">
-
-    <div class="section-head">
-      <span class="eyebrow">FOLLOW US</span>
-
-      <h2>Inside <span class="italic-accent">Shivam Opticals</span></h2>
-
-      <p>
-        Stay updated with our latest collections, customer transformations,
-        eye testing, special offers and everyday moments from our showroom.
-      </p>
-    </div>
-
-    <div class="instagram-feed">
-      <div class="insta-follow-card">
-        <div class="insta-follow-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </div>
-        <h3>@shivamopticals.co</h3>
-        <p>Follow along for new arrivals, customer moments, and offers straight from our showroom.</p>
-        <a href="https://www.instagram.com/shivamopticals.co" target="_blank" rel="noopener" class="btn btn-catalogue">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          Follow on Instagram
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- ============================
      BRANCHES
@@ -2917,7 +2900,7 @@ class="brand-name">
           <li><a href="#about">About Us</a></li>
           <li><a href="#founder">Founder</a></li>
           <li><a href="#book-test">Book Eye Test</a></li>
-          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="#visit-us">Instagram</a></li>
           <li><a href="#branches">Branches</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="blog/index.html">Blog</a></li>

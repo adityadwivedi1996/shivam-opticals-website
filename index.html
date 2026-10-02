@@ -567,11 +567,47 @@
     border-radius: 50%;
     background: rgba(255,255,255,0.4);
     transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
   }
   .hero-dots .dot.active,
   .visit-dots .dot.active {
     background: #fff;
     transform: scale(1.2);
+  }
+
+  /* Manual prev/next controls for both slideshows */
+  .slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(10,10,10,0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease, background 0.2s ease;
+  }
+  .slide-nav svg { width: 20px; height: 20px; }
+  .slide-nav:hover { background: rgba(10,10,10,0.6); }
+  .slide-nav-prev { left: 14px; }
+  .slide-nav-next { right: 14px; }
+  .hero-visual:hover .slide-nav,
+  .hero-img-main:hover .slide-nav {
+    opacity: 1;
+  }
+  @media (max-width: 640px) {
+    /* No hover on touch devices — keep controls visible but understated */
+    .slide-nav { opacity: 0.85; width: 34px; height: 34px; }
+    .slide-nav svg { width: 16px; height: 16px; }
+    .slide-nav-prev { left: 8px; }
+    .slide-nav-next { right: 8px; }
   }
 
   @keyframes rise {
@@ -1990,6 +2026,12 @@ color: var(--accent-tint);
   <div class="hero-visual">
     <img id="heroSlideA" src="images/h-titan.jpg" alt="Titan Rimless eyewear" loading="eager" class="hero-slide-layer is-active" />
     <img id="heroSlideB" src="images/h-irus.jpg" alt="IRUS eyewear" loading="lazy" class="hero-slide-layer" />
+    <button class="slide-nav slide-nav-prev" id="heroPrev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="slide-nav slide-nav-next" id="heroNext" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
     <div class="hero-dots" id="heroDots">
       <span class="dot active" data-index="0"></span>
         <span class="dot" data-index="1"></span>
@@ -2090,7 +2132,7 @@ color: var(--accent-tint);
   <div class="need-tile-marquee" aria-label="Shop by category — clip-on frames, kids' eyewear, power sunglasses, contact lenses, smart lens coatings, progressive lenses, myopia control, and repair services">
     <div class="need-tile-track">
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20clip-on%20sunglasses." target="_blank" rel="noopener" class="need-tile">
-        <img src="images/title-clipon.png" alt="Magnetic clip-on sunglasses on eyeglasses frame" loading="lazy" />
+        <img src="images/title-clipon.jpg" alt="Magnetic clip-on sunglasses on eyeglasses frame" loading="lazy" />
         <div class="need-tile-caption">
           <h3>One Frame, Two Looks</h3>
           <p>Magnetic clip-on sunglasses — snap on, step outside.</p>
@@ -2098,7 +2140,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20looking%20for%20kids%27%20eyewear." target="_blank" rel="noopener" class="need-tile">
-        <img src="images/title-kids.png" alt="Kids' eyewear, colourful and playful" loading="lazy" />
+        <img src="images/title-kids.jpg" alt="Kids' eyewear, colourful and playful" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Eyewear Kids Love Wearing</h3>
           <p>Durable, playful frames sized right for growing faces.</p>
@@ -2106,7 +2148,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20power%20sunglasses." target="_blank" rel="noopener" class="need-tile">
-        <img src="images/title-sunglasses.png" alt="Power sunglasses with prescription lens" loading="lazy" />
+        <img src="images/title-sunglasses.jpg" alt="Power sunglasses with prescription lens" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Power Sunglasses</h3>
           <p>Your prescription, built into UV400 sunglasses.</p>
@@ -2114,7 +2156,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20contact%20lenses." target="_blank" rel="noopener" class="need-tile">
-        <img src="images/title-contactlens.png" alt="Contact lens on fingertip" loading="lazy" />
+        <img src="images/title-contactlens.jpg" alt="Contact lens on fingertip" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Contact Lenses</h3>
           <p>Daily, monthly and coloured lenses — fitted right.</p>
@@ -2122,7 +2164,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="#services" class="need-tile">
-        <img src="images/title-lensfeatures.png" alt="Bluecut, photochromic, anti-glare and night-driving lens features" loading="lazy" />
+        <img src="images/title-lensfeatures.jpg" alt="Bluecut, photochromic, anti-glare and night-driving lens features" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Smart Lens Coatings</h3>
           <p>Bluecut · Photochromic · Anti-Glare · Night Driving.</p>
@@ -2130,7 +2172,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20progressive%20lenses." target="_blank" rel="noopener" class="need-tile">
-        <img src="images/title-progressive.png" alt="Progressive varifocal lenses" loading="lazy" />
+        <img src="images/title-progressive.jpg" alt="Progressive varifocal lenses" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Progressive Lenses</h3>
           <p>One pair for near, far and everything between — no lines.</p>
@@ -2138,7 +2180,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27d%20like%20to%20know%20more%20about%20Essilor%20myopia%20control%20for%20my%20child." target="_blank" rel="noopener" class="need-tile">
-        <img src="images/title-myopia.png" alt="Essilor myopia control lenses for children" loading="lazy" />
+        <img src="images/title-myopia.jpg" alt="Essilor myopia control lenses for children" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Myopia Control for Kids</h3>
           <p>Essilor lenses that help slow the rise in your child's power.</p>
@@ -2146,7 +2188,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="#book-test" class="need-tile">
-        <img src="images/title-services.png" alt="Eyewear repair and adjustment workbench" loading="lazy" />
+        <img src="images/title-services.jpg" alt="Eyewear repair and adjustment workbench" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Test, Fit & Repair</h3>
           <p>Free eye test, frame adjustment, same-day fitting.</p>
@@ -2155,7 +2197,7 @@ color: var(--accent-tint);
 
       <!-- duplicate set for seamless infinite loop -->
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20clip-on%20sunglasses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/title-clipon.png" alt="" loading="lazy" />
+        <img src="images/title-clipon.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>One Frame, Two Looks</h3>
           <p>Magnetic clip-on sunglasses — snap on, step outside.</p>
@@ -2163,7 +2205,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20looking%20for%20kids%27%20eyewear." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/title-kids.png" alt="" loading="lazy" />
+        <img src="images/title-kids.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Eyewear Kids Love Wearing</h3>
           <p>Durable, playful frames sized right for growing faces.</p>
@@ -2171,7 +2213,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20power%20sunglasses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/title-sunglasses.png" alt="" loading="lazy" />
+        <img src="images/title-sunglasses.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Power Sunglasses</h3>
           <p>Your prescription, built into UV400 sunglasses.</p>
@@ -2179,7 +2221,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20contact%20lenses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/tile-contactlens.png" alt="" loading="lazy" />
+        <img src="images/title-contactlens.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Contact Lenses</h3>
           <p>Daily, monthly and coloured lenses — fitted right.</p>
@@ -2187,7 +2229,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="#services" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/tile-lensfeatures.png" alt="" loading="lazy" />
+        <img src="images/title-lensfeatures.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Smart Lens Coatings</h3>
           <p>Bluecut · Photochromic · Anti-Glare · Night Driving.</p>
@@ -2195,7 +2237,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27m%20interested%20in%20progressive%20lenses." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/tile-progressive.png" alt="" loading="lazy" />
+        <img src="images/title-progressive.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Progressive Lenses</h3>
           <p>One pair for near, far and everything between — no lines.</p>
@@ -2203,7 +2245,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="https://wa.me/919569916408?text=Hi%20Shivam%20Opticals%2C%20I%27d%20like%20to%20know%20more%20about%20Essilor%20myopia%20control%20for%20my%20child." target="_blank" rel="noopener" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/tile-myopia.png" alt="" loading="lazy" />
+        <img src="images/title-myopia.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Myopia Control for Kids</h3>
           <p>Essilor lenses that help slow the rise in your child's power.</p>
@@ -2211,7 +2253,7 @@ color: var(--accent-tint);
       </a>
 
       <a href="#book-test" class="need-tile" aria-hidden="true" tabindex="-1">
-        <img src="images/tile-services.png" alt="" loading="lazy" />
+        <img src="images/title-services.jpg" alt="" loading="lazy" />
         <div class="need-tile-caption">
           <h3>Test, Fit & Repair</h3>
           <p>Free eye test, frame adjustment, same-day fitting.</p>
@@ -2238,6 +2280,12 @@ color: var(--accent-tint);
         <div class="hero-img-backdrop" id="visitBackdropB" style="background-image: url('images/insideshivamopticals.jpeg');"></div>
         <img id="visitImgA" src="images/hero.jpg" alt="Shivam Opticals storefront" loading="lazy" class="hero-img-layer is-active" />
         <img id="visitImgB" src="images/insideshivamopticals.jpeg" alt="Shivam Opticals store, frames on display" loading="lazy" class="hero-img-layer" />
+        <button class="slide-nav slide-nav-prev" id="visitPrev" aria-label="Previous photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="slide-nav slide-nav-next" id="visitNext" aria-label="Next photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
 
       <div class="visit-dots" id="visitDots">
@@ -2999,14 +3047,17 @@ class="brand-name">
     const imgA = document.getElementById('heroSlideA');
     const imgB = document.getElementById('heroSlideB');
     const dots = document.querySelectorAll('#heroDots .dot');
+    const prevBtn = document.getElementById('heroPrev');
+    const nextBtn = document.getElementById('heroNext');
     if (!imgA || !imgB || slides.length === 0) return;
 
     let current = 0;
     let showingA = true;
+    let timer = null;
 
-    function goToNext() {
-      const nextIndex = (current + 1) % slides.length;
-      const nextSlide = slides[nextIndex];
+    function goTo(targetIndex) {
+      if (targetIndex === current) return;
+      const nextSlide = slides[targetIndex];
 
       const incoming = showingA ? imgB : imgA;
       const outgoing = showingA ? imgA : imgB;
@@ -3019,15 +3070,28 @@ class="brand-name">
         outgoing.classList.remove('is-active');
       });
 
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === nextIndex));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === targetIndex));
 
-      current = nextIndex;
+      current = targetIndex;
       showingA = !showingA;
     }
 
-    if (slides.length > 1) {
-      setInterval(goToNext, 5000);
+    function goToNext() { goTo((current + 1) % slides.length); }
+    function goToPrev() { goTo((current - 1 + slides.length) % slides.length); }
+
+    function startAutoplay() {
+      if (slides.length > 1) timer = setInterval(goToNext, 5000);
     }
+    function restartAutoplay() {
+      if (timer) clearInterval(timer);
+      startAutoplay();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { goToPrev(); restartAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { goToNext(); restartAutoplay(); });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); restartAutoplay(); }));
+
+    startAutoplay();
   })();
 
   // "Visit Us" gallery rotation — crossfades through the real shop photos every 4.5s.
@@ -3052,10 +3116,13 @@ class="brand-name">
     const backdropA = document.getElementById('visitBackdropA');
     const backdropB = document.getElementById('visitBackdropB');
     const dots = document.querySelectorAll('#visitDots .dot');
+    const prevBtn = document.getElementById('visitPrev');
+    const nextBtn = document.getElementById('visitNext');
     if (!imgA || !imgB || slides.length === 0) return;
 
     let current = 0;   // index of slide currently showing
     let showingA = true; // which layer (A/B) is on top right now
+    let timer = null;
 
     function applySlide(imgEl, backdropEl, slide) {
       imgEl.src = slide.src;
@@ -3063,9 +3130,9 @@ class="brand-name">
       backdropEl.style.backgroundImage = `url('${slide.src}')`;
     }
 
-    function goToNext() {
-      const nextIndex = (current + 1) % slides.length;
-      const nextSlide = slides[nextIndex];
+    function goTo(targetIndex) {
+      if (targetIndex === current) return;
+      const nextSlide = slides[targetIndex];
 
       const incomingImg = showingA ? imgB : imgA;
       const incomingBackdrop = showingA ? backdropB : backdropA;
@@ -3083,15 +3150,28 @@ class="brand-name">
         outgoingBackdrop.classList.remove('is-active');
       });
 
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === nextIndex));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === targetIndex));
 
-      current = nextIndex;
+      current = targetIndex;
       showingA = !showingA;
     }
 
-    if (slides.length > 1) {
-      setInterval(goToNext, 4500);
+    function goToNext() { goTo((current + 1) % slides.length); }
+    function goToPrev() { goTo((current - 1 + slides.length) % slides.length); }
+
+    function startAutoplay() {
+      if (slides.length > 1) timer = setInterval(goToNext, 4500);
     }
+    function restartAutoplay() {
+      if (timer) clearInterval(timer);
+      startAutoplay();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { goToPrev(); restartAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { goToNext(); restartAutoplay(); });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); restartAutoplay(); }));
+
+    startAutoplay();
   })();
 
   // Mobile nav toggle

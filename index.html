@@ -2024,8 +2024,8 @@ color: var(--accent-tint);
 ============================ -->
 <section class="hero" id="home">
   <div class="hero-visual">
-    <img id="heroSlideA" src="images/h-titan.jpg" alt="Titan Rimless eyewear" loading="eager" class="hero-slide-layer is-active" />
-    <img id="heroSlideB" src="images/h-irus.jpg" alt="IRUS eyewear" loading="lazy" class="hero-slide-layer" />
+    <img id="heroSlideA" src="images/h-titan.jpg" srcset="images/h-titan-mobile.jpg 960w, images/h-titan.jpg 1920w" sizes="100vw" alt="Titan Rimless eyewear" loading="eager" class="hero-slide-layer is-active" />
+    <img id="heroSlideB" src="images/h-irus.jpg" srcset="images/h-irus-mobile.jpg 960w, images/h-irus.jpg 1920w" sizes="100vw" alt="IRUS eyewear" loading="lazy" class="hero-slide-layer" />
     <button class="slide-nav slide-nav-prev" id="heroPrev" aria-label="Previous slide">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
@@ -3035,13 +3035,13 @@ class="brand-name">
   // Two <img> layers are swapped back and forth (same pattern as "Visit Us" below).
   (function() {
     const slides = [
-      { src: 'images/h-titan.jpg',      alt: 'Titan Rimless eyewear' },
-      { src: 'images/h-irus.jpg',       alt: 'IRUS — Buy 1 Get 1 Free' },
-      { src: 'images/h-rayban.jpg',     alt: 'Ray-Ban Aviator sunglasses' },
-      { src: 'images/h-puma.jpg',       alt: 'PUMA sports eyewear' },
-      { src: 'images/h-clipon.jpg',     alt: 'Clip-on sunglasses' },
-      { src: 'images/h-colorlens.jpg',  alt: 'Colored contact lenses' },
-      { src: 'images/h-transitions.jpg',alt: 'Essilor Transitions lenses' }
+      { src: 'images/h-titan.jpg',      srcset: 'images/h-titan-mobile.jpg 960w, images/h-titan.jpg 1920w',           alt: 'Titan Rimless eyewear' },
+      { src: 'images/h-irus.jpg',       srcset: 'images/h-irus-mobile.jpg 960w, images/h-irus.jpg 1920w',             alt: 'IRUS — Buy 1 Get 1 Free' },
+      { src: 'images/h-rayban.jpg',     srcset: 'images/h-rayban-mobile.jpg 960w, images/h-rayban.jpg 1920w',         alt: 'Ray-Ban Aviator sunglasses' },
+      { src: 'images/h-puma.jpg',       srcset: 'images/h-puma-mobile.jpg 960w, images/h-puma.jpg 1920w',             alt: 'PUMA sports eyewear' },
+      { src: 'images/h-clipon.jpg',     srcset: 'images/h-clipon-mobile.jpg 960w, images/h-clipon.jpg 1920w',         alt: 'Clip-on sunglasses' },
+      { src: 'images/h-colorlens.jpg',  srcset: 'images/h-colorlens-mobile.jpg 960w, images/h-colorlens.jpg 1920w',   alt: 'Colored contact lenses' },
+      { src: 'images/h-transitions.jpg',srcset: 'images/h-transitions-mobile.jpg 960w, images/h-transitions.jpg 1920w', alt: 'Essilor Transitions lenses' }
     ];
 
     const imgA = document.getElementById('heroSlideA');
@@ -3063,6 +3063,7 @@ class="brand-name">
       const outgoing = showingA ? imgA : imgB;
 
       incoming.src = nextSlide.src;
+      incoming.srcset = nextSlide.srcset;
       incoming.alt = nextSlide.alt;
 
       requestAnimationFrame(() => {
